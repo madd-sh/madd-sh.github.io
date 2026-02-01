@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bibliothèque des Skills ZDD - Specification, Development, Audit, Retro-Spec, Correction. Les contrats de connaissance du Zero-Drift Development.">
+
+  <title>Skills — ZDD</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2300ff88' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' font-family='monospace' fill='%230a0a0a'>Z</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">Z</span>
+        <span>ZDD</span>
+      </a>
+
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav__links">
+        <li><a href="concepts.html" class="nav__link">Concepts</a></li>
+        <li><a href="skills.html" class="nav__link nav__link--active">Skills</a></li>
+        <li><a href="examples.html" class="nav__link">Exemples</a></li>
+        <li><a href="manifesto.html" class="nav__link">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="nav__link" target="_blank">GitHub ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container container--narrow">
+      <h3>Contrats de Connaissance</h3>
+      <h1>Bibliothèque des Skills</h1>
+      <p>Les skills injectent la connaissance à jour et définissent les critères de qualité entre chaque phase du cycle ZDD.</p>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container container--narrow">
+
+      <!-- Intro -->
+      <p class="lead">Les skills sont des prompts structurés qui médiatisent chaque transition entre agents. Ils compensent les données d'entraînement obsolètes de l'IA et garantissent la cohérence du projet.</p>
+
+      <h2>Pourquoi les Skills ?</h2>
+
+      <p>L'IA générative a un problème fondamental : <strong>ses données d'entraînement sont datées</strong>. Le dernier framework, la convention de votre équipe, la doc de l'API v3 — elle ne les connaît pas.</p>
+
+      <p>Les skills résolvent ce problème en injectant :</p>
+      <ul>
+        <li><strong>Documentation à jour</strong> — API, frameworks, librairies</li>
+        <li><strong>Conventions projet</strong> — Patterns, naming, structure</li>
+        <li><strong>Critères de qualité</strong> — Ce qui définit "bien fait" pour ce projet</li>
+        <li><strong>Contexte métier</strong> — Règles, edge cases, contraintes</li>
+      </ul>
+
+      <h2>Les 5 Skills Fondamentaux</h2>
+
+      <!-- Skill Card: Specification -->
+      <div class="skill-card" id="specification-skill">
+        <div class="skill-card__header">
+          <div class="skill-card__icon">📋</div>
+          <div class="skill-card__meta">
+            <h3>Specification Skill</h3>
+            <span class="skill-card__badge skill-card__badge--high">Priorité haute</span>
+          </div>
+        </div>
+
+        <div class="skill-card__body">
+          <p><strong>Rôle :</strong> Guide l'Agent Spec dans la production d'Intention Documents structurés avec des requirements vérifiables.</p>
+
+          <h4>Transition médiatisée</h4>
+          <div class="skill-transition">
+            <span>Besoin métier</span>
+            <span class="skill-transition__arrow">→</span>
+            <span class="skill-transition__highlight">Intention Document</span>
+          </div>
+
+          <h4>Contenu du skill</h4>
+          <ul>
+            <li>Template d'Intention Document</li>
+            <li>Règles de formulation des critères vérifiables</li>
+            <li>Checklist de complétude</li>
+            <li>Anti-patterns à éviter (vagueness, scope creep)</li>
+          </ul>
+
+          <h4>Exemple de prompt</h4>
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__lang">specification-skill.md</span>
+            </div>
+            <pre><code># Specification Skill
+
+## Ta mission
+Tu es l'Agent Spec. Tu transformes un besoin métier en
+Intention Document structuré et vérifiable.
+
+## Template obligatoire
+Chaque Intention Document DOIT contenir :
+1. **Contexte** — Le problème métier à résoudre
+2. **Objectif** — Ce que l'utilisateur pourra faire
+3. **Critères de Validation** — Liste de checks vérifiables
+4. **Hors Scope** — Ce qui n'est PAS inclus
+5. **Contraintes** — Techniques et métier
+
+## Règles des critères
+- Chaque critère DOIT être testable automatiquement
+- Utilise "DOIT" et "NE DOIT PAS", jamais "devrait"
+- Quantifie quand possible (temps de réponse, limites)
+- Un critère = une assertion
+
+## Anti-patterns
+❌ "L'interface doit être intuitive"
+✅ "L'utilisateur peut compléter le flow en moins de 3 clics"
+
+❌ "Performance acceptable"
+✅ "Temps de réponse < 200ms au P95"
+
+❌ "Gérer les erreurs correctement"
+✅ "Toute erreur API retourne un code HTTP approprié et
+   un message JSON structuré {error, code, details}"</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Card: Development -->
+      <div class="skill-card" id="development-skill">
+        <div class="skill-card__header">
+          <div class="skill-card__icon">⚡</div>
+          <div class="skill-card__meta">
+            <h3>Development Skill</h3>
+            <span class="skill-card__badge">Implicite</span>
+          </div>
+        </div>
+
+        <div class="skill-card__body">
+          <p><strong>Rôle :</strong> Définit les conventions, patterns, et contraintes que l'Agent Dev doit respecter.</p>
+
+          <h4>Transition médiatisée</h4>
+          <div class="skill-transition">
+            <span>Intention Document</span>
+            <span class="skill-transition__arrow">→</span>
+            <span class="skill-transition__highlight">Code implémenté</span>
+          </div>
+
+          <h4>Contenu du skill</h4>
+          <ul>
+            <li>Stack technique et versions</li>
+            <li>Patterns architecturaux (hexagonal, clean, etc.)</li>
+            <li>Conventions de nommage et structure fichiers</li>
+            <li>Documentation des APIs et libs projet</li>
+            <li>Règles de sécurité (OWASP, sanitization)</li>
+          </ul>
+
+          <h4>Exemple de prompt</h4>
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__lang">development-skill.md</span>
+            </div>
+            <pre><code># Development Skill — Projet XYZ
+
+## Stack
+- Runtime: Node.js 20 LTS
+- Framework: Fastify 4.x
+- ORM: Drizzle ORM
+- Validation: Zod
+- Tests: Vitest
+
+## Architecture
+Pattern hexagonal avec ports et adapters.
+- `src/domain/` — Entités et logique métier pure
+- `src/application/` — Use cases et ports
+- `src/infrastructure/` — Adapters (DB, HTTP, etc.)
+- `src/api/` — Controllers Fastify
+
+## Conventions
+- Nommage: camelCase pour variables, PascalCase pour types
+- Un fichier = une responsabilité
+- Pas d'import relatif au-delà de `../`
+- Chaque use case a un fichier dédié
+
+## Sécurité
+- Valider TOUTES les entrées avec Zod
+- Paramètres SQL via prepared statements uniquement
+- Pas de secrets en dur, utiliser env vars
+- Logger les erreurs, jamais les stack traces en prod
+
+## À NE PAS FAIRE
+- Pas de `any` TypeScript
+- Pas de logique métier dans les controllers
+- Pas de queries SQL dans le domain</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Card: Audit (Due Diligence) -->
+      <div class="skill-card" id="audit-skill">
+        <div class="skill-card__header">
+          <div class="skill-card__icon">🔍</div>
+          <div class="skill-card__meta">
+            <h3>Audit Skill (Due Diligence)</h3>
+            <span class="skill-card__badge skill-card__badge--high">Priorité haute</span>
+          </div>
+        </div>
+
+        <div class="skill-card__body">
+          <p><strong>Rôle :</strong> Liste les critères de validation, les patterns à détecter, et le format du rapport d'audit.</p>
+
+          <h4>Transition médiatisée</h4>
+          <div class="skill-transition">
+            <span>Code implémenté</span>
+            <span class="skill-transition__arrow">→</span>
+            <span class="skill-transition__highlight">Rapport d'audit</span>
+          </div>
+
+          <h4>Contenu du skill</h4>
+          <ul>
+            <li>Checklist de validation technique</li>
+            <li>Patterns de code à détecter (smells, anti-patterns)</li>
+            <li>Règles de sécurité à vérifier</li>
+            <li>Critères d'alignement intention/implémentation</li>
+            <li>Format standardisé du rapport</li>
+          </ul>
+
+          <h4>Exemple de prompt</h4>
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__lang">audit-skill.md</span>
+            </div>
+            <pre><code># Audit Skill — Due Diligence
+
+## Ta mission
+Tu es l'Agent Audit. Tu analyses le code produit SANS
+complaisance. Tu n'as pas participé au développement.
+Ton objectif : identifier toute dérive, risque, ou dette.
+
+## Checklist obligatoire
+
+### Alignement Intention/Code
+- [ ] Chaque critère de l'Intention Doc est implémenté
+- [ ] Pas de fonctionnalité hors scope
+- [ ] Les contraintes sont respectées
+
+### Qualité du code
+- [ ] Pas de TODO/FIXME non documentés
+- [ ] Pas de code mort ou commenté
+- [ ] Pas de duplication excessive
+- [ ] Types stricts (pas de any/unknown non justifié)
+
+### Sécurité
+- [ ] Inputs validés avant traitement
+- [ ] Pas d'injection possible (SQL, XSS, etc.)
+- [ ] Secrets externalisés
+- [ ] Erreurs loggées sans stack trace en prod
+
+### Tests
+- [ ] Couverture des cas nominaux
+- [ ] Couverture des edge cases documentés
+- [ ] Tests lisibles et maintenables
+
+## Format du rapport
+```markdown
+# Rapport d'Audit — [Feature]
+
+## Résumé
+- Statut global: ✅ Approuvé / ⚠️ Réserves / ❌ Rejeté
+- Findings critiques: X
+- Findings majeurs: Y
+- Findings mineurs: Z
+
+## Findings
+
+### [CRIT-001] Titre du finding
+- Sévérité: CRITIQUE
+- Localisation: fichier:ligne
+- Description: ...
+- Recommandation: ...
+
+## Conclusion
+Décision finale argumentée.
+```</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Card: Retro-Spec -->
+      <div class="skill-card" id="retrospec-skill">
+        <div class="skill-card__header">
+          <div class="skill-card__icon">📝</div>
+          <div class="skill-card__meta">
+            <h3>Retro-Spec Skill</h3>
+            <span class="skill-card__badge skill-card__badge--high">Priorité haute — Différenciateur</span>
+          </div>
+        </div>
+
+        <div class="skill-card__body">
+          <p><strong>Rôle :</strong> Guide le Scribe dans l'analyse objective du code et la production de la documentation de ce qui existe réellement.</p>
+
+          <h4>Transition médiatisée</h4>
+          <div class="skill-transition">
+            <span>Code audité</span>
+            <span class="skill-transition__arrow">→</span>
+            <span class="skill-transition__highlight">Rétro-Spécification</span>
+          </div>
+
+          <h4>Contenu du skill</h4>
+          <ul>
+            <li>Méthode d'analyse du code</li>
+            <li>Template de rétro-spécification</li>
+            <li>Matrice de comparaison intention/réalité</li>
+            <li>Règles d'objectivité et neutralité</li>
+          </ul>
+
+          <h4>Exemple de prompt</h4>
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__lang">retrospec-skill.md</span>
+            </div>
+            <pre><code># Retro-Spec Skill
+
+## Ta mission
+Tu es l'Agent Scribe. Tu documentes OBJECTIVEMENT ce qui
+existe dans le code. Tu n'as pas participé au développement.
+Tu ne minimises ni n'exagères — tu constates.
+
+## Méthode d'analyse
+1. Lister tous les fichiers créés/modifiés
+2. Identifier les fonctions et leurs signatures
+3. Détecter les patterns architecturaux utilisés
+4. Relever TODOs, FIXMEs, et code commenté
+5. Comparer avec l'Intention Document
+
+## Règles d'objectivité
+- NE PAS utiliser "bien", "mal", "correct", "incorrect"
+- Utiliser des faits : "existe", "manque", "diffère"
+- Quantifier : "3 fichiers", "15 fonctions", "2 TODOs"
+- Citer les lignes exactes pour chaque observation
+
+## Template de sortie
+```markdown
+# Rétro-Spécification — [Feature]
+
+## Référence
+- Intention: INTENTION-DOC-XXX
+- Commit: abc123
+- Date: YYYY-MM-DD
+
+## Inventaire
+
+### Fichiers (X créés, Y modifiés)
+| Fichier | Action | Lignes |
+|---------|--------|--------|
+| src/x.ts | Créé | 45 |
+
+### Fonctions publiques
+| Fonction | Fichier | Description |
+|----------|---------|-------------|
+| createUser | src/x.ts | Crée un utilisateur |
+
+## Delta Intention → Réalité
+| Critère intention | Statut | Evidence |
+|-------------------|--------|----------|
+| "Créer un compte" | ✅ | createUser() |
+| "Notifier admin" | ⚠️ | TODO ligne 45 |
+
+## Dette technique
+- [fichier:ligne] Description factuelle
+
+## Observations
+Notes neutres sur les choix techniques observés.
+```</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Card: Correction -->
+      <div class="skill-card" id="correction-skill">
+        <div class="skill-card__header">
+          <div class="skill-card__icon">🔧</div>
+          <div class="skill-card__meta">
+            <h3>Correction Skill</h3>
+            <span class="skill-card__badge skill-card__badge--medium">Priorité moyenne</span>
+          </div>
+        </div>
+
+        <div class="skill-card__body">
+          <p><strong>Rôle :</strong> Encadre la correction des findings d'audit avec traçabilité obligatoire.</p>
+
+          <h4>Transition médiatisée</h4>
+          <div class="skill-transition">
+            <span>Rapport d'audit</span>
+            <span class="skill-transition__arrow">→</span>
+            <span class="skill-transition__highlight">Code corrigé</span>
+          </div>
+
+          <h4>Contenu du skill</h4>
+          <ul>
+            <li>Priorisation des findings par sévérité</li>
+            <li>Règles de traçabilité (finding → commit)</li>
+            <li>Interdiction d'introduction de nouvelles features</li>
+            <li>Scope strict : correction uniquement</li>
+          </ul>
+
+          <h4>Exemple de prompt</h4>
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__lang">correction-skill.md</span>
+            </div>
+            <pre><code># Correction Skill
+
+## Ta mission
+Tu corriges les findings du rapport d'audit. UNIQUEMENT
+les findings. Tu n'ajoutes pas de features, tu n'améliores
+pas le code "au passage". Scope strict.
+
+## Ordre de traitement
+1. CRITIQUE — Bloquants, à corriger immédiatement
+2. MAJEUR — À corriger avant merge
+3. MINEUR — Peuvent être différés si justifié
+
+## Règles de traçabilité
+Chaque correction DOIT référencer le finding :
+- Commit message: "fix(audit): [CRIT-001] description"
+- Commentaire si clarification nécessaire
+
+## Interdictions
+❌ Ajouter des fonctionnalités non demandées
+❌ Refactorer "tant qu'on y est"
+❌ Changer la structure des fichiers
+❌ Mettre à jour des dépendances
+
+## À la fin
+Produire un rapport de correction :
+```markdown
+# Rapport de Correction
+
+## Findings traités
+| ID | Sévérité | Statut | Commit |
+|----|----------|--------|--------|
+| CRIT-001 | Critique | ✅ Corrigé | abc123 |
+
+## Findings différés
+| ID | Raison |
+|----|--------|
+| MIN-003 | Hors scope, ticket créé |
+```</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Types -->
+      <h2>Types de Skills</h2>
+
+      <p>Les skills sont catégorisés par leur portée :</p>
+
+      <div class="skill-types-grid">
+        <div class="skill-type-card">
+          <h4>Skills Publics</h4>
+          <p>Documentation de frameworks, librairies, APIs. Partagés entre projets.</p>
+          <div class="skill-type-example">Ex: "React 18 patterns", "Fastify security"</div>
+        </div>
+
+        <div class="skill-type-card">
+          <h4>Skills Projet</h4>
+          <p>Conventions internes, architecture spécifique, règles métier.</p>
+          <div class="skill-type-example">Ex: "Architecture Projet X", "Règles domaine finance"</div>
+        </div>
+
+        <div class="skill-type-card">
+          <h4>Skills Delta</h4>
+          <p>Patches de connaissance temporaires pour une session ou feature.</p>
+          <div class="skill-type-example">Ex: "Hotfix API v3.2", "Migration Zod 3→4"</div>
+        </div>
+      </div>
+
+      <!-- Versioning -->
+      <h2>Versionner les Skills</h2>
+
+      <p>Les skills sont du code. Ils doivent être versionnés comme du code :</p>
+
+      <div class="code-block">
+        <div class="code-block__header">
+          <span class="code-block__lang">Structure de repo skills</span>
+        </div>
+        <pre><code>skills/
+├── public/
+│   ├── react-18-patterns.md
+│   ├── fastify-security.md
+│   └── typescript-strict.md
+├── project/
+│   ├── architecture.md
+│   ├── conventions.md
+│   └── domain-rules.md
+├── agents/
+│   ├── specification-skill.md
+│   ├── development-skill.md
+│   ├── audit-skill.md
+│   ├── retrospec-skill.md
+│   └── correction-skill.md
+└── CHANGELOG.md</code></pre>
+      </div>
+
+      <p>Chaque modification de skill est un commit avec changelog. L'équipe peut voir l'évolution des standards et revenir en arrière si nécessaire.</p>
+
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__content">
+      <h2>Voir ZDD en action</h2>
+      <p>Découvrez comment ces skills s'articulent dans un projet réel.</p>
+      <div class="hero__cta">
+        <a href="examples.html" class="btn btn--primary">Voir les Exemples →</a>
+        <a href="concepts.html" class="btn btn--secondary">Revoir les Concepts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2025 ZDD — Zero-Drift Development. Open Source sous licence MIT.</p>
+      <ul class="footer__links">
+        <li><a href="manifesto.html" class="footer__link">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="footer__link" target="_blank">GitHub</a></li>
+        <li><a href="#" class="footer__link">Contribuer</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

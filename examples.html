@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exemples et Case Studies ZDD - Zero-Drift Development en pratique. Comment une plateforme multi-tenant a été développée en 2 jours.">
+
+  <title>Exemples — ZDD</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2300ff88' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' font-family='monospace' fill='%230a0a0a'>Z</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">Z</span>
+        <span>ZDD</span>
+      </a>
+
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav__links">
+        <li><a href="concepts.html" class="nav__link">Concepts</a></li>
+        <li><a href="skills.html" class="nav__link">Skills</a></li>
+        <li><a href="examples.html" class="nav__link nav__link--active">Exemples</a></li>
+        <li><a href="manifesto.html" class="nav__link">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="nav__link" target="_blank">GitHub ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container container--narrow">
+      <h3>En Pratique</h3>
+      <h1>Exemples & Case Studies</h1>
+      <p>ZDD appliqué sur des projets réels. Métriques, workflows, et retours d'expérience.</p>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container container--narrow">
+
+      <!-- Coming Soon Hero -->
+      <div class="coming-soon-hero">
+        <div class="coming-soon-hero__icon">🚧</div>
+        <h2>Case Study en préparation</h2>
+        <p>Un case study détaillé est en cours de rédaction, documentant le développement d'une plateforme multi-tenant complète en 2 jours avec ZDD.</p>
+      </div>
+
+      <!-- Preview -->
+      <h2>Aperçu : Plateforme Multi-Tenant</h2>
+
+      <div class="case-study-preview">
+        <div class="case-study-preview__metrics">
+          <div class="metric-card">
+            <span class="metric-card__value">2</span>
+            <span class="metric-card__label">Jours de dev</span>
+            <span class="metric-card__compare">vs ~12 mois traditionnel</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">3</span>
+            <span class="metric-card__label">Agents utilisés</span>
+            <span class="metric-card__compare">Gemini + Opus + GPT</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">0</span>
+            <span class="metric-card__label">Findings critiques</span>
+            <span class="metric-card__compare">Post-audit</span>
+          </div>
+        </div>
+
+        <h3>Ce que le case study couvrira</h3>
+        <ul>
+          <li>Setup initial des 3 agents et leurs rôles</li>
+          <li>Exemples d'Intention Documents produits</li>
+          <li>Workflow complet d'un cycle ZDD</li>
+          <li>Rapport d'audit réel avec findings</li>
+          <li>Rétro-spécification finale</li>
+          <li>Métriques de productivité et qualité</li>
+        </ul>
+      </div>
+
+      <!-- Workflow Preview -->
+      <h2>Workflow utilisé</h2>
+
+      <div class="workflow-preview">
+        <div class="workflow-step">
+          <div class="workflow-step__header">
+            <span class="workflow-step__number">1</span>
+            <h4>Roadmap & Specs</h4>
+            <span class="workflow-step__agent">Gemini 2.5 Pro</span>
+          </div>
+          <p>Définition de la roadmap produit, priorisation des features, production des Intention Documents pour chaque sprint.</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-step__header">
+            <span class="workflow-step__number">2</span>
+            <h4>Développement</h4>
+            <span class="workflow-step__agent">Claude Opus 4</span>
+          </div>
+          <p>Implémentation des features selon les Intention Documents. Code, tests, documentation technique.</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-step__header">
+            <span class="workflow-step__number">3</span>
+            <h4>Audit Due Diligence</h4>
+            <span class="workflow-step__agent">GPT-5.2-Codex</span>
+          </div>
+          <p>Analyse complète du code produit. Vérification de l'alignement intention/implémentation. Rapport structuré.</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-step__header">
+            <span class="workflow-step__number">4</span>
+            <h4>Corrections & Rétro-Spec</h4>
+            <span class="workflow-step__agent">Scribe (à définir)</span>
+          </div>
+          <p>Correction des findings, puis documentation objective de ce qui existe réellement dans le code.</p>
+        </div>
+      </div>
+
+      <!-- Quick Examples -->
+      <h2>Extraits à venir</h2>
+
+      <div class="examples-grid">
+        <div class="example-card">
+          <div class="example-card__header">
+            <span class="example-card__type">Intention Document</span>
+          </div>
+          <div class="example-card__body">
+            <h4>Gestion des tenants</h4>
+            <p>Comment l'intention pour l'isolation des données par tenant a été formalisée avec ses critères de validation.</p>
+          </div>
+          <div class="example-card__footer">
+            <span class="example-card__status">À venir</span>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div class="example-card__header">
+            <span class="example-card__type">Rapport d'Audit</span>
+          </div>
+          <div class="example-card__body">
+            <h4>Audit du module auth</h4>
+            <p>Rapport complet de l'audit du système d'authentification avec ses findings et recommandations.</p>
+          </div>
+          <div class="example-card__footer">
+            <span class="example-card__status">À venir</span>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div class="example-card__header">
+            <span class="example-card__type">Rétro-Spécification</span>
+          </div>
+          <div class="example-card__body">
+            <h4>API REST complète</h4>
+            <p>Documentation objective de l'API REST produite, comparée aux specs initiales.</p>
+          </div>
+          <div class="example-card__footer">
+            <span class="example-card__status">À venir</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contribute -->
+      <h2>Partagez vos expériences</h2>
+
+      <p>Vous utilisez ZDD ou une approche similaire ? Vos retours d'expérience enrichissent la méthodologie.</p>
+
+      <div class="contribute-options">
+        <a href="https://github.com/zero-drift-development" class="contribute-card" target="_blank">
+          <div class="contribute-card__icon">📂</div>
+          <div>
+            <h4>Soumettre un case study</h4>
+            <p>Ouvrez une issue ou PR sur GitHub avec votre retour d'expérience structuré.</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/zero-drift-development/discussions" class="contribute-card" target="_blank">
+          <div class="contribute-card__icon">💬</div>
+          <div>
+            <h4>Rejoindre la discussion</h4>
+            <p>Participez aux GitHub Discussions pour échanger avec la communauté.</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__content">
+      <h2>Prêt à essayer ZDD ?</h2>
+      <p>Commencez par les concepts fondamentaux et configurez vos premiers agents.</p>
+      <div class="hero__cta">
+        <a href="concepts.html" class="btn btn--primary">Découvrir les Concepts →</a>
+        <a href="skills.html" class="btn btn--secondary">Explorer les Skills</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2025 ZDD — Zero-Drift Development. Open Source sous licence MIT.</p>
+      <ul class="footer__links">
+        <li><a href="manifesto.html" class="footer__link">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="footer__link" target="_blank">GitHub</a></li>
+        <li><a href="#" class="footer__link">Contribuer</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

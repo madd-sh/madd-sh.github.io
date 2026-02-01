@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les concepts ZDD - Intention Document, Contrat Exécutable, Rétro-Spécification. Les artefacts fondamentaux du Zero-Drift Development.">
+
+  <title>Concepts — ZDD</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2300ff88' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' font-family='monospace' fill='%230a0a0a'>Z</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">Z</span>
+        <span>ZDD</span>
+      </a>
+
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav__links">
+        <li><a href="concepts.html" class="nav__link nav__link--active">Concepts</a></li>
+        <li><a href="skills.html" class="nav__link">Skills</a></li>
+        <li><a href="examples.html" class="nav__link">Exemples</a></li>
+        <li><a href="manifesto.html" class="nav__link">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="nav__link" target="_blank">GitHub ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container container--narrow">
+      <h3>Les Artefacts</h3>
+      <h1>Concepts ZDD</h1>
+      <p>Les trois artefacts fondamentaux qui garantissent zéro dérive entre l'intention et l'implémentation.</p>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container container--narrow">
+
+      <!-- Intro -->
+      <p class="lead">ZDD repose sur trois artefacts versionés qui forment la colonne vertébrale de chaque cycle de développement. Chaque artefact a un producteur et un consommateur distincts, garantissant l'objectivité du système.</p>
+
+      <!-- Intention Document -->
+      <h2 id="intention-document">1. L'Intention Document</h2>
+
+      <div class="concept-badge">Produit par : Agent Spec | Consommé par : Agent Dev</div>
+
+      <p>L'Intention Document est le point de départ de tout cycle ZDD. C'est un document structuré qui capture le <strong>"pourquoi"</strong> et le <strong>"quoi"</strong> avant tout "comment".</p>
+
+      <h3>Pourquoi c'est différent d'une User Story</h3>
+      <p>Une User Story décrit un désir utilisateur. L'Intention Document va plus loin :</p>
+      <ul>
+        <li>Il explicite le <strong>contexte métier</strong> et les contraintes</li>
+        <li>Il définit des <strong>critères de validation vérifiables</strong></li>
+        <li>Il documente ce qui est <strong>hors scope</strong> explicitement</li>
+        <li>Il est <strong>versionné</strong> et traçable dans le temps</li>
+      </ul>
+
+      <h3>Structure d'un Intention Document</h3>
+
+      <div class="code-block">
+        <div class="code-block__header">
+          <span class="code-block__lang">INTENTION-DOC-001.md</span>
+        </div>
+        <pre><code># Intention Document: [Titre]
+
+## Contexte
+Pourquoi cette fonctionnalité existe. Quel problème métier elle résout.
+
+## Objectif
+Ce que l'utilisateur/système doit pouvoir faire une fois implémenté.
+
+## Critères de Validation
+- [ ] Critère 1 — vérifiable automatiquement
+- [ ] Critère 2 — vérifiable automatiquement
+- [ ] Critère 3 — vérifiable automatiquement
+
+## Hors Scope
+Ce qui n'est PAS inclus dans cette intention.
+
+## Contraintes
+- Techniques (stack, performance, sécurité)
+- Métier (règles, edge cases)
+
+## Références
+- Liens vers specs existantes
+- Documentation pertinente</code></pre>
+      </div>
+
+      <h3>Règles de qualité</h3>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <span class="rule-card__icon">✓</span>
+          <div>
+            <strong>Vérifiable</strong>
+            <p>Chaque critère peut être testé automatiquement ou via assertion</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <span class="rule-card__icon">✓</span>
+          <div>
+            <strong>Autonome</strong>
+            <p>Le document contient tout le contexte nécessaire</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <span class="rule-card__icon">✓</span>
+          <div>
+            <strong>Non-ambigu</strong>
+            <p>Un seul développeur lisant le doc arriverait aux mêmes conclusions</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <span class="rule-card__icon">✓</span>
+          <div>
+            <strong>Borné</strong>
+            <p>Le scope est explicite, le hors-scope aussi</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contract -->
+      <h2 id="contrat">2. Le Contrat Exécutable</h2>
+
+      <div class="concept-badge">Produit par : Agent Spec | Vérifié par : Agent Audit</div>
+
+      <p>Le Contrat Exécutable transforme les critères de l'Intention Document en validations automatisables. C'est la différence entre "je veux que ça marche" et "voici comment prouver que ça marche".</p>
+
+      <h3>Principe fondamental</h3>
+      <blockquote>
+        Une spécification qu'on ne peut pas vérifier automatiquement n'est pas un contrat, c'est un souhait.
+      </blockquote>
+
+      <h3>Formes du Contrat</h3>
+
+      <p>Le contrat peut prendre plusieurs formes selon le contexte :</p>
+
+      <div class="contract-types">
+        <div class="contract-type">
+          <h4>Tests unitaires / intégration</h4>
+          <p>Pour les comportements fonctionnels</p>
+          <div class="code-inline">expect(createUser({email: ""})).toThrow(ValidationError)</div>
+        </div>
+
+        <div class="contract-type">
+          <h4>Schemas de validation</h4>
+          <p>Pour les structures de données</p>
+          <div class="code-inline">UserSchema.parse(input) // Zod, JSON Schema</div>
+        </div>
+
+        <div class="contract-type">
+          <h4>Assertions de type</h4>
+          <p>Pour les garanties au compile-time</p>
+          <div class="code-inline">function process(user: ValidatedUser): Result</div>
+        </div>
+
+        <div class="contract-type">
+          <h4>Tests de performance</h4>
+          <p>Pour les exigences non-fonctionnelles</p>
+          <div class="code-inline">expect(response.time).toBeLessThan(200) // ms</div>
+        </div>
+
+        <div class="contract-type">
+          <h4>Règles de lint custom</h4>
+          <p>Pour les conventions architecturales</p>
+          <div class="code-inline">no-direct-db-access-from-controllers</div>
+        </div>
+      </div>
+
+      <h3>Matrice Intention → Contrat</h3>
+
+      <div class="matrix-table-wrapper">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Critère d'intention</th>
+              <th>Type de contrat</th>
+              <th>Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"L'utilisateur peut créer un compte"</td>
+              <td>Test E2E</td>
+              <td>Cypress : signup flow</td>
+            </tr>
+            <tr>
+              <td>"L'email doit être valide"</td>
+              <td>Schema + Unit test</td>
+              <td>Zod schema + test cases</td>
+            </tr>
+            <tr>
+              <td>"Réponse en moins de 200ms"</td>
+              <td>Test de perf</td>
+              <td>k6 / Artillery</td>
+            </tr>
+            <tr>
+              <td>"Pas d'injection SQL"</td>
+              <td>SAST + Test</td>
+              <td>sqlmap + sanitization tests</td>
+            </tr>
+            <tr>
+              <td>"Architecture hexagonale"</td>
+              <td>Lint rule</td>
+              <td>ESLint custom rule</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Retro-Spec -->
+      <h2 id="retro-spec">3. La Rétro-Spécification</h2>
+
+      <div class="concept-badge">Produit par : Agent Scribe | Validé par : Agent Spec</div>
+
+      <p>La Rétro-Spécification documente <strong>ce qui existe réellement</strong> dans le code, indépendamment de ce que l'Agent Dev déclare avoir implémenté. C'est le différenciateur clé de ZDD.</p>
+
+      <h3>Pourquoi un agent séparé ?</h3>
+
+      <div class="warning-box">
+        <strong>Le problème de l'auto-documentation</strong>
+        <p>Si l'agent qui code est le même qui documente, il a un incentive naturel à embellir, minimiser les écarts, ou "oublier" les TODOs laissés. C'est le renard qui garde le poulailler.</p>
+      </div>
+
+      <p>L'Agent Scribe n'a pas participé au développement. Il analyse le code source objectivement et produit une documentation de ce qui existe vraiment :</p>
+
+      <ul>
+        <li>Quelles fonctions ont été créées/modifiées</li>
+        <li>Quels patterns ont été utilisés</li>
+        <li>Quelles dépendances ont été ajoutées</li>
+        <li>Quels TODOs et FIXME existent</li>
+        <li>Quel est le delta entre l'intention et l'implémentation</li>
+      </ul>
+
+      <h3>Structure d'une Rétro-Spécification</h3>
+
+      <div class="code-block">
+        <div class="code-block__header">
+          <span class="code-block__lang">RETRO-SPEC-001.md</span>
+        </div>
+        <pre><code># Rétro-Spécification: [Titre]
+
+## Référence
+- Intention Document: INTENTION-DOC-001
+- Date d'analyse: 2025-XX-XX
+- Commit analysé: abc123
+
+## Ce qui a été implémenté
+Description factuelle de ce qui existe dans le code.
+
+### Fichiers créés/modifiés
+- `src/users/create.ts` — Nouveau
+- `src/validation/email.ts` — Modifié
+
+### Patterns utilisés
+- Repository pattern pour l'accès DB
+- Validation via Zod schemas
+
+## Delta avec l'intention
+| Critère | Statut | Notes |
+|---------|--------|-------|
+| Création compte | ✅ Implémenté | |
+| Validation email | ✅ Implémenté | |
+| Notification admin | ⚠️ Partiel | TODO ligne 45 |
+
+## TODOs et dette technique
+- `src/users/create.ts:45` — TODO: envoyer notification
+- `src/validation/email.ts:12` — FIXME: regex edge case
+
+## Observations
+Notes objectives sur la qualité, les choix techniques,
+les risques identifiés.</code></pre>
+      </div>
+
+      <h3>Le cycle de validation</h3>
+
+      <div class="cycle-diagram">
+        <div class="cycle-step">
+          <span class="cycle-step__number">1</span>
+          <div class="cycle-step__content">
+            <strong>Agent Scribe</strong> analyse le code post-dev
+          </div>
+        </div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-step">
+          <span class="cycle-step__number">2</span>
+          <div class="cycle-step__content">
+            <strong>Rétro-Spec</strong> produite objectivement
+          </div>
+        </div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-step">
+          <span class="cycle-step__number">3</span>
+          <div class="cycle-step__content">
+            <strong>Agent Spec</strong> compare avec l'intention
+          </div>
+        </div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-step">
+          <span class="cycle-step__number">4</span>
+          <div class="cycle-step__content">
+            <strong>Validation</strong> ou nouveau cycle
+          </div>
+        </div>
+      </div>
+
+      <!-- Lifecycle -->
+      <h2 id="lifecycle">Cycle de vie des artefacts</h2>
+
+      <p>Les trois artefacts forment une boucle de feedback continue :</p>
+
+      <div class="lifecycle-diagram">
+        <div class="lifecycle-node lifecycle-node--intention">
+          <div class="lifecycle-node__label">Intention Document</div>
+          <div class="lifecycle-node__desc">Définit le "quoi"</div>
+        </div>
+        <div class="lifecycle-connector">
+          <span>Skill de Spec</span>
+        </div>
+        <div class="lifecycle-node lifecycle-node--contract">
+          <div class="lifecycle-node__label">Contrat Exécutable</div>
+          <div class="lifecycle-node__desc">Définit le "comment vérifier"</div>
+        </div>
+        <div class="lifecycle-connector">
+          <span>Skill de Dev</span>
+        </div>
+        <div class="lifecycle-node lifecycle-node--code">
+          <div class="lifecycle-node__label">Code</div>
+          <div class="lifecycle-node__desc">Implémentation</div>
+        </div>
+        <div class="lifecycle-connector">
+          <span>Skill d'Audit</span>
+        </div>
+        <div class="lifecycle-node lifecycle-node--retrospec">
+          <div class="lifecycle-node__label">Rétro-Spec</div>
+          <div class="lifecycle-node__desc">Documente le "qu'est-ce qui existe"</div>
+        </div>
+        <div class="lifecycle-feedback">
+          <span>Feedback → Nouvelle itération</span>
+        </div>
+      </div>
+
+      <p>La Rétro-Spec devient l'entrée du prochain cycle. Elle capture les dérives à corriger, les patterns à consolider, et les décisions techniques à documenter.</p>
+
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__content">
+      <h2>Prêt à implémenter ?</h2>
+      <p>Découvrez les skills qui médiatisent chaque transition entre artefacts.</p>
+      <div class="hero__cta">
+        <a href="skills.html" class="btn btn--primary">Explorer les Skills →</a>
+        <a href="manifesto.html" class="btn btn--secondary">Lire le Manifeste</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2025 ZDD — Zero-Drift Development. Open Source sous licence MIT.</p>
+      <ul class="footer__links">
+        <li><a href="manifesto.html" class="footer__link">Manifeste</a></li>
+        <li><a href="https://github.com/zero-drift-development" class="footer__link" target="_blank">GitHub</a></li>
+        <li><a href="#" class="footer__link">Contribuer</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
