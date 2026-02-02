@@ -1347,20 +1347,68 @@ kbd {
 
 /* ========================================
    AI AGENT BANNER
-   Visually hidden but accessible to screen readers and AI crawlers
+   Visible banner showing agent-first commitment
    ======================================== */
 .ai-agent-banner {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  background: var(--color-bg-elevated);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-xs) 0;
+  margin-top: 60px; /* Account for fixed nav */
 }
 
-.ai-agent-banner a {
-  color: inherit;
+.ai-agent-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.ai-agent-banner__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: var(--color-accent-glow);
+  border: 1px solid var(--color-accent-dim);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+}
+
+.ai-agent-banner__badge::before {
+  content: "◆";
+  font-size: 0.5rem;
+}
+
+.ai-agent-banner__text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.ai-agent-banner__text a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.ai-agent-banner__text a:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .ai-agent-banner {
+    padding: var(--space-sm) 0;
+  }
+
+  .ai-agent-banner__inner {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
 }

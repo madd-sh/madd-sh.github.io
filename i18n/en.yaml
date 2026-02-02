@@ -1,8 +1,8 @@
 # MADD English Translations
 
 # AI Agent Banner
-ai_banner_text: "AI Agents: For structured content, visit"
-ai_banner_or: "or access any page as Markdown"
+ai_banner_badge: "Agent-Ready"
+ai_banner_text: "This site is optimized for AI agents."
 
 # Navigation
 nav_problem: "Problem"
