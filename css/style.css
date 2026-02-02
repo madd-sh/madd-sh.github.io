@@ -1,4 +1,4 @@
-/* ZDD - Zero-Drift Development
+/* MADD - Multi-Agent Driven Development
    Design: Technical Brutalist / Editorial Manifesto
    Aesthetic: Precision, Contrast, Authority */
 
@@ -968,4 +968,46 @@ section {
   .not-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* ========================================
+   CODE BLOCKS
+   ======================================== */
+.code-block {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  margin: var(--space-lg) 0;
+  overflow: hidden;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: var(--space-lg);
+  overflow-x: auto;
+}
+
+.code-block code {
+  background: none;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  display: block;
+  white-space: pre;
+}
+
+.page-content pre {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  overflow-x: auto;
+  margin: var(--space-lg) 0;
+}
+
+.page-content pre code {
+  background: none;
+  padding: 0;
+  color: var(--color-text-secondary);
 }
