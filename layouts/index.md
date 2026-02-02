@@ -1,0 +1,102 @@
+# MADD — Multi-Agent Driven Development
+
+> {{ i18n "hero_subtitle" | plainify }}
+
+## {{ i18n "problem_section_title" }}
+
+{{ i18n "problem_title" | plainify }}
+
+### {{ i18n "problem_card1_title" }}
+{{ i18n "problem_card1_text" | plainify }}
+
+### {{ i18n "problem_card2_title" }}
+{{ i18n "problem_card2_text" | plainify }}
+
+### {{ i18n "problem_card3_title" }}
+{{ i18n "problem_card3_text" | plainify }}
+
+### {{ i18n "problem_card4_title" }}
+{{ i18n "problem_card4_text" | plainify }}
+
+## {{ i18n "principles_title" }}
+
+### 1. {{ i18n "principles_p1_title" }}
+{{ i18n "principles_p1_text" }}
+{{ i18n "principles_p1_change" }}
+
+### 2. {{ i18n "principles_p2_title" }}
+{{ i18n "principles_p2_text" }}
+{{ i18n "principles_p2_change" }}
+
+### 3. {{ i18n "principles_p3_title" }}
+{{ i18n "principles_p3_text" }}
+{{ i18n "principles_p3_change" }}
+
+### 4. {{ i18n "principles_p4_title" }}
+{{ i18n "principles_p4_text" }}
+{{ i18n "principles_p4_change" }}
+
+### 5. {{ i18n "principles_p5_title" }}
+{{ i18n "principles_p5_text" }}
+{{ i18n "principles_p5_change" }}
+
+### 6. {{ i18n "principles_p6_title" }}
+{{ i18n "principles_p6_text" }}
+{{ i18n "principles_p6_change" }}
+
+## {{ i18n "agents_title" }}
+
+{{ i18n "agents_subtitle" }}
+
+### Spec Agent
+{{ i18n "agents_spec_desc" }}
+- {{ i18n "agents_spec_task1" }}
+- {{ i18n "agents_spec_task2" }}
+- {{ i18n "agents_spec_task3" }}
+
+### Dev Agent
+{{ i18n "agents_dev_desc" }}
+- {{ i18n "agents_dev_task1" }}
+- {{ i18n "agents_dev_task2" }}
+- {{ i18n "agents_dev_task3" }}
+
+### Audit Agent
+{{ i18n "agents_audit_desc" }}
+- {{ i18n "agents_audit_task1" }}
+- {{ i18n "agents_audit_task2" }}
+- {{ i18n "agents_audit_task3" }}
+
+### Scribe Agent
+{{ i18n "agents_scribe_desc" }}
+- {{ i18n "agents_scribe_task1" }}
+- {{ i18n "agents_scribe_task2" }}
+- {{ i18n "agents_scribe_task3" }}
+
+## {{ i18n "comparison_title" }}
+
+| {{ i18n "comparison_th_aspect" }} | {{ i18n "comparison_th_legacy" }} | {{ i18n "comparison_th_madd" }} |
+|---|---|---|
+| {{ i18n "comparison_row1_aspect" }} | {{ i18n "comparison_row1_legacy" }} | {{ i18n "comparison_row1_madd" }} |
+| {{ i18n "comparison_row2_aspect" }} | {{ i18n "comparison_row2_legacy" }} | {{ i18n "comparison_row2_madd" }} |
+| {{ i18n "comparison_row3_aspect" }} | {{ i18n "comparison_row3_legacy" }} | {{ i18n "comparison_row3_madd" }} |
+| {{ i18n "comparison_row4_aspect" }} | {{ i18n "comparison_row4_legacy" }} | {{ i18n "comparison_row4_madd" }} |
+| {{ i18n "comparison_row5_aspect" }} | {{ i18n "comparison_row5_legacy" }} | {{ i18n "comparison_row5_madd" }} |
+| {{ i18n "comparison_row6_aspect" }} | {{ i18n "comparison_row6_legacy" }} | {{ i18n "comparison_row6_madd" }} |
+| {{ i18n "comparison_row7_aspect" }} | {{ i18n "comparison_row7_legacy" }} | {{ i18n "comparison_row7_madd" }} |
+| {{ i18n "comparison_row8_aspect" }} | {{ i18n "comparison_row8_legacy" }} | {{ i18n "comparison_row8_madd" }} |
+
+## Pages
+
+- [Concepts]({{ "concepts.md" | relLangURL }}): {{ i18n "concepts_page_intro" | plainify }}
+- [Skills]({{ "skills.md" | relLangURL }}): {{ i18n "skills_page_intro" | plainify }}
+- [Manifesto]({{ "manifesto.md" | relLangURL }}): {{ i18n "manifesto_page_intro" | plainify }}
+- [Examples]({{ "examples.md" | relLangURL }}): {{ i18n "examples_page_intro" | plainify }}
+
+## Links
+
+- [GitHub](https://github.com/madd-sh): Source code and contributions
+- [HTML Version]({{ .Permalink }}): Full website with interactive features
+
+---
+*MADD — Multi-Agent Driven Development*
+*Open Source under MIT license*

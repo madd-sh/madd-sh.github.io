@@ -1,0 +1,387 @@
+{{ define "main" }}
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__grid"></div>
+  <div class="container hero__content">
+    <span class="hero__badge">{{ i18n "hero_badge" }}</span>
+    <h1 class="hero__title">
+      <span class="hero__title-main">{{ i18n "hero_title_main" }}</span>
+      <span class="hero__title-accent">{{ i18n "hero_title_accent" }}</span>
+    </h1>
+    <p class="hero__subtitle">{{ i18n "hero_subtitle" | safeHTML }}</p>
+    <div class="hero__cta">
+      <a href="#quickstart" class="btn btn--primary">{{ i18n "hero_cta_start" }}</a>
+      <a href="{{ "manifesto.html" | relLangURL }}" class="btn btn--secondary">{{ i18n "hero_cta_manifesto" }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="problem" id="problem">
+  <div class="container">
+    <header class="problem__header">
+      <h3>{{ i18n "problem_section_title" }}</h3>
+      <h2>{{ i18n "problem_title" | safeHTML }}</h2>
+    </header>
+
+    <div class="problem__grid">
+      <article class="problem__card" data-number="01">
+        <h3>{{ i18n "problem_card1_title" }}</h3>
+        <p>{{ i18n "problem_card1_text" | safeHTML }}</p>
+      </article>
+
+      <article class="problem__card" data-number="02">
+        <h3>{{ i18n "problem_card2_title" }}</h3>
+        <p>{{ i18n "problem_card2_text" }}</p>
+      </article>
+
+      <article class="problem__card" data-number="03">
+        <h3>{{ i18n "problem_card3_title" }}</h3>
+        <p>{{ i18n "problem_card3_text" }}</p>
+      </article>
+
+      <article class="problem__card" data-number="04">
+        <h3>{{ i18n "problem_card4_title" }}</h3>
+        <p>{{ i18n "problem_card4_text" }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Principles -->
+<section class="principles" id="principles">
+  <div class="container container--narrow">
+    <h3>{{ i18n "principles_section_title" }}</h3>
+    <h2>{{ i18n "principles_title" }}</h2>
+
+    <div class="principles__list">
+      <article class="principle">
+        <span class="principle__number">01</span>
+        <div class="principle__content">
+          <h3>{{ i18n "principles_p1_title" }}</h3>
+          <p>{{ i18n "principles_p1_text" }}</p>
+          <p class="principle__change">{{ i18n "principles_p1_change" }}</p>
+        </div>
+      </article>
+
+      <article class="principle">
+        <span class="principle__number">02</span>
+        <div class="principle__content">
+          <h3>{{ i18n "principles_p2_title" }}</h3>
+          <p>{{ i18n "principles_p2_text" }}</p>
+          <p class="principle__change">{{ i18n "principles_p2_change" }}</p>
+        </div>
+      </article>
+
+      <article class="principle">
+        <span class="principle__number">03</span>
+        <div class="principle__content">
+          <h3>{{ i18n "principles_p3_title" }}</h3>
+          <p>{{ i18n "principles_p3_text" }}</p>
+          <p class="principle__change">{{ i18n "principles_p3_change" }}</p>
+        </div>
+      </article>
+
+      <article class="principle">
+        <span class="principle__number">04</span>
+        <div class="principle__content">
+          <h3>{{ i18n "principles_p4_title" }}</h3>
+          <p>{{ i18n "principles_p4_text" }}</p>
+          <p class="principle__change">{{ i18n "principles_p4_change" }}</p>
+        </div>
+      </article>
+
+      <article class="principle">
+        <span class="principle__number">05</span>
+        <div class="principle__content">
+          <h3>{{ i18n "principles_p5_title" }}</h3>
+          <p>{{ i18n "principles_p5_text" }}</p>
+          <p class="principle__change">{{ i18n "principles_p5_change" }}</p>
+        </div>
+      </article>
+
+      <article class="principle">
+        <span class="principle__number">06</span>
+        <div class="principle__content">
+          <h3>{{ i18n "principles_p6_title" }}</h3>
+          <p>{{ i18n "principles_p6_text" }}</p>
+          <p class="principle__change">{{ i18n "principles_p6_change" }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Agents -->
+<section class="agents" id="agents">
+  <div class="container">
+    <header class="agents__header">
+      <h3>{{ i18n "agents_section_title" }}</h3>
+      <h2>{{ i18n "agents_title" }}</h2>
+      <p>{{ i18n "agents_subtitle" }}</p>
+    </header>
+
+    <div class="agents__diagram">
+      <div class="agents__flow">
+        <div class="agent-box">
+          <div class="agent-box__icon">📋</div>
+          <div class="agent-box__name">{{ i18n "agents_spec" }}</div>
+          <div class="agent-box__role">{{ i18n "agents_spec_role" }}</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box">
+          <div class="agent-box__icon">⚡</div>
+          <div class="agent-box__name">{{ i18n "agents_dev" }}</div>
+          <div class="agent-box__role">{{ i18n "agents_dev_role" }}</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box">
+          <div class="agent-box__icon">🔍</div>
+          <div class="agent-box__name">{{ i18n "agents_audit" }}</div>
+          <div class="agent-box__role">{{ i18n "agents_audit_role" }}</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box">
+          <div class="agent-box__icon">📝</div>
+          <div class="agent-box__name">{{ i18n "agents_scribe" }}</div>
+          <div class="agent-box__role">{{ i18n "agents_scribe_role" }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="agents__grid">
+      <article class="agent-card">
+        <div class="agent-card__header">
+          <div class="agent-card__icon">📋</div>
+          <span class="agent-card__name">Agent {{ i18n "agents_spec" }}</span>
+        </div>
+        <p>{{ i18n "agents_spec_desc" }}</p>
+        <ul class="agent-card__list">
+          <li>{{ i18n "agents_spec_task1" }}</li>
+          <li>{{ i18n "agents_spec_task2" }}</li>
+          <li>{{ i18n "agents_spec_task3" }}</li>
+        </ul>
+      </article>
+
+      <article class="agent-card">
+        <div class="agent-card__header">
+          <div class="agent-card__icon">⚡</div>
+          <span class="agent-card__name">Agent {{ i18n "agents_dev" }}</span>
+        </div>
+        <p>{{ i18n "agents_dev_desc" }}</p>
+        <ul class="agent-card__list">
+          <li>{{ i18n "agents_dev_task1" }}</li>
+          <li>{{ i18n "agents_dev_task2" }}</li>
+          <li>{{ i18n "agents_dev_task3" }}</li>
+        </ul>
+      </article>
+
+      <article class="agent-card">
+        <div class="agent-card__header">
+          <div class="agent-card__icon">🔍</div>
+          <span class="agent-card__name">Agent {{ i18n "agents_audit" }}</span>
+        </div>
+        <p>{{ i18n "agents_audit_desc" }}</p>
+        <ul class="agent-card__list">
+          <li>{{ i18n "agents_audit_task1" }}</li>
+          <li>{{ i18n "agents_audit_task2" }}</li>
+          <li>{{ i18n "agents_audit_task3" }}</li>
+        </ul>
+      </article>
+
+      <article class="agent-card">
+        <div class="agent-card__header">
+          <div class="agent-card__icon">📝</div>
+          <span class="agent-card__name">Agent {{ i18n "agents_scribe" }}</span>
+        </div>
+        <p>{{ i18n "agents_scribe_desc" }}</p>
+        <ul class="agent-card__list">
+          <li>{{ i18n "agents_scribe_task1" }}</li>
+          <li>{{ i18n "agents_scribe_task2" }}</li>
+          <li>{{ i18n "agents_scribe_task3" }}</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section class="comparison" id="comparison">
+  <div class="container container--narrow">
+    <h3>{{ i18n "comparison_section_title" }}</h3>
+    <h2>{{ i18n "comparison_title" }}</h2>
+
+    <div class="comparison__table-wrapper">
+      <table class="comparison__table">
+        <thead>
+          <tr>
+            <th>{{ i18n "comparison_th_aspect" }}</th>
+            <th>{{ i18n "comparison_th_legacy" }}</th>
+            <th>{{ i18n "comparison_th_madd" }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ i18n "comparison_row1_aspect" }}</td>
+            <td>{{ i18n "comparison_row1_legacy" }}</td>
+            <td>{{ i18n "comparison_row1_madd" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "comparison_row2_aspect" }}</td>
+            <td>{{ i18n "comparison_row2_legacy" }}</td>
+            <td>{{ i18n "comparison_row2_madd" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "comparison_row3_aspect" }}</td>
+            <td>{{ i18n "comparison_row3_legacy" }}</td>
+            <td>{{ i18n "comparison_row3_madd" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "comparison_row4_aspect" }}</td>
+            <td>{{ i18n "comparison_row4_legacy" }}</td>
+            <td>{{ i18n "comparison_row4_madd" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "comparison_row5_aspect" }}</td>
+            <td>{{ i18n "comparison_row5_legacy" }}</td>
+            <td>{{ i18n "comparison_row5_madd" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "comparison_row6_aspect" }}</td>
+            <td>{{ i18n "comparison_row6_legacy" }}</td>
+            <td>{{ i18n "comparison_row6_madd" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "comparison_row7_aspect" }}</td>
+            <td>{{ i18n "comparison_row7_legacy" }}</td>
+            <td>{{ i18n "comparison_row7_madd" }}</td>
+          </tr>
+          <tr>
+            <td>{{ i18n "comparison_row8_aspect" }}</td>
+            <td>{{ i18n "comparison_row8_legacy" }}</td>
+            <td>{{ i18n "comparison_row8_madd" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Quickstart -->
+<section class="quickstart" id="quickstart">
+  <div class="container container--narrow">
+    <h3>{{ i18n "quickstart_section_title" }}</h3>
+    <h2>{{ i18n "quickstart_title" }}</h2>
+
+    <div class="quickstart__tabs">
+      <button class="quickstart__tab quickstart__tab--active" data-tab="tab-solo">{{ i18n "quickstart_tab_solo" }}</button>
+      <button class="quickstart__tab" data-tab="tab-team">{{ i18n "quickstart_tab_team" }}</button>
+      <button class="quickstart__tab" data-tab="tab-migration">{{ i18n "quickstart_tab_migration" }}</button>
+    </div>
+
+    <div id="tab-solo" class="quickstart__content quickstart__content--active">
+      <div class="quickstart__steps">
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">1</span>
+          <div>
+            <h4>{{ i18n "quickstart_solo_step1_title" }}</h4>
+            <p>{{ i18n "quickstart_solo_step1_text" }}</p>
+          </div>
+        </div>
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">2</span>
+          <div>
+            <h4>{{ i18n "quickstart_solo_step2_title" }}</h4>
+            <p>{{ i18n "quickstart_solo_step2_text" }}</p>
+          </div>
+        </div>
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">3</span>
+          <div>
+            <h4>{{ i18n "quickstart_solo_step3_title" }}</h4>
+            <p>{{ i18n "quickstart_solo_step3_text" }}</p>
+          </div>
+        </div>
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">4</span>
+          <div>
+            <h4>{{ i18n "quickstart_solo_step4_title" }}</h4>
+            <p>{{ i18n "quickstart_solo_step4_text" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-team" class="quickstart__content">
+      <div class="quickstart__steps">
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">1</span>
+          <div>
+            <h4>{{ i18n "quickstart_team_step1_title" }}</h4>
+            <p>{{ i18n "quickstart_team_step1_text" }}</p>
+          </div>
+        </div>
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">2</span>
+          <div>
+            <h4>{{ i18n "quickstart_team_step2_title" }}</h4>
+            <p>{{ i18n "quickstart_team_step2_text" }}</p>
+          </div>
+        </div>
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">3</span>
+          <div>
+            <h4>{{ i18n "quickstart_team_step3_title" }}</h4>
+            <p>{{ i18n "quickstart_team_step3_text" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-migration" class="quickstart__content">
+      <div class="quickstart__steps">
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">1</span>
+          <div>
+            <h4>{{ i18n "quickstart_migration_step1_title" }}</h4>
+            <p>{{ i18n "quickstart_migration_step1_text" }}</p>
+          </div>
+        </div>
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">2</span>
+          <div>
+            <h4>{{ i18n "quickstart_migration_step2_title" }}</h4>
+            <p>{{ i18n "quickstart_migration_step2_text" }}</p>
+          </div>
+        </div>
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">3</span>
+          <div>
+            <h4>{{ i18n "quickstart_migration_step3_title" }}</h4>
+            <p>{{ i18n "quickstart_migration_step3_text" }}</p>
+          </div>
+        </div>
+        <div class="quickstart__step">
+          <span class="quickstart__step-number">4</span>
+          <div>
+            <h4>{{ i18n "quickstart_migration_step4_title" }}</h4>
+            <p>{{ i18n "quickstart_migration_step4_text" }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container cta__content">
+    <h2>{{ i18n "cta_title" }}</h2>
+    <p>{{ i18n "cta_text" }}</p>
+    <div class="hero__cta">
+      <a href="https://github.com/madd-sh" class="btn btn--primary" target="_blank">{{ i18n "cta_btn_github" }}</a>
+      <a href="{{ "manifesto.html" | relLangURL }}" class="btn btn--secondary">{{ i18n "cta_btn_manifesto" }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

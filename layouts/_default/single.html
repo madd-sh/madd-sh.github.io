@@ -1,0 +1,32 @@
+{{ define "main" }}
+<!-- Page Header -->
+<header class="page-header">
+  <div class="container container--narrow">
+    <h3>{{ .Params.subtitle }}</h3>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </div>
+</header>
+
+<!-- Page Content -->
+<main class="page-content">
+  <div class="container container--narrow">
+    {{ .Content }}
+  </div>
+</main>
+
+{{ with .Params.cta }}
+<!-- CTA -->
+<section class="cta">
+  <div class="container cta__content">
+    <h2>{{ .title }}</h2>
+    <p>{{ .text }}</p>
+    <div class="hero__cta">
+      {{ range .buttons }}
+      <a href="{{ .url }}" class="btn {{ .class }}"{{ if .external }} target="_blank"{{ end }}>{{ .label }}</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

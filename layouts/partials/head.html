@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="keywords" content="MADD, Multi-Agent Driven Development, AI development, methodology, Scrum alternative, AI-assisted development, drift control, convergence">
+
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — MADD{{ end }}</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23CC785C' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' font-family='monospace' fill='%23141413'>M</text></svg>">
+
+<!-- Alternate language versions -->
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{ end }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+
+<!-- MD version for LLMs -->
+{{ if .OutputFormats.Get "MD" }}
+<link rel="alternate" type="text/markdown" href="{{ (.OutputFormats.Get "MD").Permalink }}">
+{{ end }}

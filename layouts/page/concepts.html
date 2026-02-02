@@ -1,0 +1,200 @@
+{{ define "main" }}
+<!-- Page Header -->
+<header class="page-header">
+  <div class="container container--narrow">
+    <h3>{{ i18n "concepts_page_subtitle" }}</h3>
+    <h1>{{ i18n "concepts_page_title" }}</h1>
+    <p>{{ i18n "concepts_page_intro" }}</p>
+  </div>
+</header>
+
+<!-- Page Content -->
+<main class="page-content">
+  <div class="container container--narrow">
+
+    <!-- Intention Document -->
+    <h2 id="intention">{{ i18n "concepts_intention_title" }}</h2>
+
+    <p>{{ i18n "concepts_intention_intro" | safeHTML }}</p>
+
+    <p>{{ i18n "concepts_intention_questions" }}</p>
+    <ul>
+      <li>{{ i18n "concepts_intention_q1" | safeHTML }}</li>
+      <li>{{ i18n "concepts_intention_q2" | safeHTML }}</li>
+      <li>{{ i18n "concepts_intention_q3" | safeHTML }}</li>
+    </ul>
+
+    <h3>{{ i18n "concepts_intention_structure_title" }}</h3>
+
+    <div class="code-block">
+      <pre><code># Intention Document: [Feature Name]
+
+## Context
+Why this feature exists. The business problem it solves.
+
+## Objective
+What the user will be able to do once the feature is delivered.
+
+## Requirements
+- [ ] REQ-001: Requirement description
+- [ ] REQ-002: Requirement description
+- [ ] REQ-003: Requirement description
+
+## Validation Criteria
+- Criterion 1: How to verify REQ-001 is implemented
+- Criterion 2: How to verify REQ-002 is implemented
+
+## Out of Scope
+What is NOT included in this intention.
+
+## Dependencies
+Prerequisites needed before starting.</code></pre>
+    </div>
+
+    <h3>{{ i18n "concepts_intention_practices_title" }}</h3>
+    <ul>
+      <li>{{ i18n "concepts_intention_practice1" }}</li>
+      <li>{{ i18n "concepts_intention_practice2" }}</li>
+      <li>{{ i18n "concepts_intention_practice3" }}</li>
+      <li>{{ i18n "concepts_intention_practice4" }}</li>
+    </ul>
+
+    <!-- Executable Contract -->
+    <h2 id="contract">{{ i18n "concepts_contract_title" }}</h2>
+
+    <p>{{ i18n "concepts_contract_intro" | safeHTML }}</p>
+
+    <p>{{ i18n "concepts_contract_desc" }}</p>
+
+    <h3>{{ i18n "concepts_contract_types_title" }}</h3>
+
+    <div class="not-table">
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_contract_type1" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_contract_type1_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_contract_type2" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_contract_type2_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_contract_type3" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_contract_type3_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_contract_type4" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_contract_type4_desc" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">{{ i18n "concepts_contract_type5" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_contract_type5_desc" }}</span>
+      </div>
+    </div>
+
+    <h3>{{ i18n "concepts_contract_principle_title" }}</h3>
+    <p>{{ i18n "concepts_contract_principle" | safeHTML }}</p>
+
+    <p>{{ i18n "concepts_contract_flow" }}</p>
+
+    <!-- Retro-Specification -->
+    <h2 id="retrospec">{{ i18n "concepts_retrospec_title" }}</h2>
+
+    <p>{{ i18n "concepts_retrospec_intro" | safeHTML }}</p>
+
+    <p>{{ i18n "concepts_retrospec_desc" }}</p>
+
+    <h3>{{ i18n "concepts_retrospec_diff_title" }}</h3>
+
+    <div class="not-table">
+      <div class="not-row">
+        <span class="not-row__left">{{ i18n "concepts_retrospec_classic" }}</span>
+        <span class="not-row__right" style="color: var(--color-accent);">{{ i18n "concepts_retrospec_madd" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left">{{ i18n "concepts_retrospec_diff1_classic" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_retrospec_diff1_madd" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left">{{ i18n "concepts_retrospec_diff2_classic" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_retrospec_diff2_madd" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left">{{ i18n "concepts_retrospec_diff3_classic" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_retrospec_diff3_madd" }}</span>
+      </div>
+      <div class="not-row">
+        <span class="not-row__left">{{ i18n "concepts_retrospec_diff4_classic" }}</span>
+        <span class="not-row__right">{{ i18n "concepts_retrospec_diff4_madd" }}</span>
+      </div>
+    </div>
+
+    <h3>{{ i18n "concepts_retrospec_content_title" }}</h3>
+    <ul>
+      <li>{{ i18n "concepts_retrospec_content1" | safeHTML }}</li>
+      <li>{{ i18n "concepts_retrospec_content2" | safeHTML }}</li>
+      <li>{{ i18n "concepts_retrospec_content3" | safeHTML }}</li>
+      <li>{{ i18n "concepts_retrospec_content4" | safeHTML }}</li>
+      <li>{{ i18n "concepts_retrospec_content5" | safeHTML }}</li>
+    </ul>
+
+    <h3>{{ i18n "concepts_retrospec_usage_title" }}</h3>
+    <p>{{ i18n "concepts_retrospec_usage" }}</p>
+
+    <!-- MADD Cycle -->
+    <h2 id="cycle">{{ i18n "concepts_cycle_title" }}</h2>
+
+    <p>{{ i18n "concepts_cycle_intro" }}</p>
+
+    <div class="agents__diagram">
+      <div class="agents__flow" style="min-width: 500px;">
+        <div class="agent-box">
+          <div class="agent-box__icon">📋</div>
+          <div class="agent-box__name">{{ i18n "concepts_cycle_intention" }}</div>
+          <div class="agent-box__role">{{ i18n "concepts_cycle_agent_spec" }}</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box">
+          <div class="agent-box__icon">📜</div>
+          <div class="agent-box__name">{{ i18n "concepts_cycle_contract" }}</div>
+          <div class="agent-box__role">{{ i18n "concepts_cycle_agent_spec" }}</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box">
+          <div class="agent-box__icon">⚡</div>
+          <div class="agent-box__name">{{ i18n "concepts_cycle_code" }}</div>
+          <div class="agent-box__role">{{ i18n "concepts_cycle_agent_dev" }}</div>
+        </div>
+        <span class="agent-arrow">→</span>
+        <div class="agent-box">
+          <div class="agent-box__icon">📝</div>
+          <div class="agent-box__name">{{ i18n "concepts_cycle_retrospec" }}</div>
+          <div class="agent-box__role">{{ i18n "concepts_cycle_agent_scribe" }}</div>
+        </div>
+      </div>
+    </div>
+
+    <ol>
+      <li>{{ i18n "concepts_cycle_step1" | safeHTML }}</li>
+      <li>{{ i18n "concepts_cycle_step2" | safeHTML }}</li>
+      <li>{{ i18n "concepts_cycle_step3" | safeHTML }}</li>
+      <li>{{ i18n "concepts_cycle_step4" | safeHTML }}</li>
+      <li>{{ i18n "concepts_cycle_step5" | safeHTML }}</li>
+    </ol>
+
+    <p>{{ i18n "concepts_cycle_conclusion" | safeHTML }}</p>
+
+  </div>
+</main>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container cta__content">
+    <h2>{{ i18n "concepts_cta_title" }}</h2>
+    <p>{{ i18n "concepts_cta_text" }}</p>
+    <div class="hero__cta">
+      <a href="{{ "skills.html" | relLangURL }}" class="btn btn--primary">{{ i18n "concepts_cta_btn_skills" }}</a>
+      <a href="{{ "manifesto.html" | relLangURL }}" class="btn btn--secondary">{{ i18n "concepts_cta_btn_manifesto" }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

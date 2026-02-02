@@ -1,0 +1,31 @@
+{{ define "main" }}
+<!-- Page Header -->
+<header class="page-header">
+  <div class="container container--narrow">
+    <h3>{{ i18n "examples_page_subtitle" }}</h3>
+    <h1>{{ i18n "examples_page_title" }}</h1>
+    <p>{{ i18n "examples_page_intro" }}</p>
+  </div>
+</header>
+
+<!-- Page Content -->
+<main class="page-content">
+  <div class="container container--narrow">
+
+    {{ .Content }}
+
+  </div>
+</main>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container cta__content">
+    <h2>{{ i18n "examples_cta_title" }}</h2>
+    <p>{{ i18n "examples_cta_text" }}</p>
+    <div class="hero__cta">
+      <a href="{{ "/" | relLangURL }}#quickstart" class="btn btn--primary">{{ i18n "examples_cta_btn_quickstart" }}</a>
+      <a href="https://github.com/madd-sh" class="btn btn--secondary" target="_blank">{{ i18n "examples_cta_btn_github" }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}
