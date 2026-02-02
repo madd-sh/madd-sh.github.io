@@ -1,0 +1,113 @@
+# MADD - Multi-Agent Driven Development
+# Hugo Configuration
+
+baseURL = "https://madd-sh.github.io/"
+languageCode = "en"
+title = "MADD — Multi-Agent Driven Development"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+# Disable default taxonomy pages
+disableKinds = ["taxonomy", "term"]
+
+# Enable Git info for lastmod
+enableGitInfo = true
+
+# Build settings
+[build]
+  writeStats = true
+
+# Output formats
+[outputFormats]
+  [outputFormats.HTML]
+    mediaType = "text/html"
+    baseName = "index"
+    isPlainText = false
+    isHTML = true
+    permalinkable = true
+
+  [outputFormats.MD]
+    mediaType = "text/markdown"
+    baseName = "index"
+    isPlainText = true
+    isHTML = false
+    permalinkable = true
+    path = ""
+
+# Configure outputs for different sections
+[outputs]
+  home = ["HTML", "MD"]
+  page = ["HTML", "MD"]
+  section = ["HTML", "MD"]
+
+# Multilingual configuration
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    contentDir = "content/en"
+    [languages.en.params]
+      description = "MADD - Multi-Agent Driven Development. An open-source methodology for AI-assisted development that provides the framework to control drift and drive convergence."
+
+  [languages.fr]
+    languageName = "Français"
+    weight = 2
+    contentDir = "content/fr"
+    [languages.fr.params]
+      description = "MADD - Multi-Agent Driven Development. Une méthodologie open source pour le développement assisté par IA qui fournit le cadre pour contrôler la dérive et forcer la convergence."
+
+# Site parameters
+[params]
+  author = "MADD Community"
+  githubUrl = "https://github.com/madd-sh"
+
+# Permalinks - clean URLs with .html extension
+[permalinks]
+  [permalinks.page]
+    page = "/:filename.html"
+
+# Menu configuration
+[menus]
+  [[menus.main]]
+    name = "Problem"
+    pageRef = "/#problem"
+    weight = 1
+  [[menus.main]]
+    name = "Principles"
+    pageRef = "/#principles"
+    weight = 2
+  [[menus.main]]
+    name = "Agents"
+    pageRef = "/#agents"
+    weight = 3
+  [[menus.main]]
+    name = "Concepts"
+    pageRef = "/concepts"
+    weight = 4
+  [[menus.main]]
+    name = "Skills"
+    pageRef = "/skills"
+    weight = 5
+  [[menus.main]]
+    name = "Manifesto"
+    pageRef = "/manifesto"
+    weight = 6
+  [[menus.main]]
+    name = "GitHub"
+    url = "https://github.com/madd-sh"
+    weight = 7
+    [menus.main.params]
+      external = true
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+# Security settings
+[security]
+  [security.funcs]
+    getenv = ["^HUGO_", "^CI$"]

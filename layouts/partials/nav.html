@@ -1,0 +1,98 @@
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="{{ "/" | relLangURL }}" class="nav__logo">
+      <span class="nav__logo-icon">M</span>
+      <span>MADD</span>
+    </a>
+
+    <div class="nav__controls">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="{{ i18n "theme_toggle_label" }}">
+        <svg class="theme-toggle__icon--light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-toggle__icon--dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <!-- Help Button -->
+      <button class="help-toggle" id="help-toggle" aria-label="Help">
+        <span>?</span>
+      </button>
+
+      <!-- Language Selector -->
+      <div class="lang-selector" id="lang-selector">
+        <button class="lang-selector__btn" aria-expanded="false" aria-haspopup="true">
+          <span id="current-lang">{{ upper .Lang }}</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="lang-selector__dropdown" role="menu">
+          {{- if eq .Lang "en" -}}
+          <a class="lang-selector__option lang-selector__option--active" href="{{ .Permalink }}" role="menuitem">English</a>
+          {{- with .Translations -}}
+            {{- range . -}}
+              {{- if eq .Lang "fr" -}}
+          <a class="lang-selector__option" href="{{ .Permalink }}" role="menuitem">Français</a>
+              {{- end -}}
+            {{- end -}}
+          {{- else -}}
+          <a class="lang-selector__option" href="/fr/" role="menuitem">Français</a>
+          {{- end -}}
+          {{- else -}}
+          {{- with .Translations -}}
+            {{- range . -}}
+              {{- if eq .Lang "en" -}}
+          <a class="lang-selector__option" href="{{ .Permalink }}" role="menuitem">English</a>
+              {{- end -}}
+            {{- end -}}
+          {{- else -}}
+          <a class="lang-selector__option" href="/" role="menuitem">English</a>
+          {{- end -}}
+          <a class="lang-selector__option lang-selector__option--active" href="{{ .Permalink }}" role="menuitem">Français</a>
+          {{- end -}}
+        </div>
+      </div>
+    </div>
+
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    {{- $pageName := "" -}}
+    {{- with .File -}}
+      {{- $pageName = .ContentBaseName -}}
+    {{- end -}}
+
+    <ul class="nav__links">
+      {{ if .IsHome }}
+      <li><a href="#problem" class="nav__link">{{ i18n "nav_problem" }}</a></li>
+      <li><a href="#principles" class="nav__link">{{ i18n "nav_principles" }}</a></li>
+      <li><a href="#agents" class="nav__link">{{ i18n "nav_agents" }}</a></li>
+      {{ else }}
+      <li><a href="{{ "/" | relLangURL }}#problem" class="nav__link">{{ i18n "nav_problem" }}</a></li>
+      <li><a href="{{ "/" | relLangURL }}#principles" class="nav__link">{{ i18n "nav_principles" }}</a></li>
+      <li><a href="{{ "/" | relLangURL }}#agents" class="nav__link">{{ i18n "nav_agents" }}</a></li>
+      {{ end }}
+      <li><a href="{{ "concepts.html" | relLangURL }}" class="nav__link{{ if eq $pageName "concepts" }} nav__link--active{{ end }}">{{ i18n "nav_concepts" }}</a></li>
+      <li><a href="{{ "skills.html" | relLangURL }}" class="nav__link{{ if eq $pageName "skills" }} nav__link--active{{ end }}">{{ i18n "nav_skills" }}</a></li>
+      <li><a href="{{ "manifesto.html" | relLangURL }}" class="nav__link{{ if eq $pageName "manifesto" }} nav__link--active{{ end }}">{{ i18n "nav_manifesto" }}</a></li>
+      <li><a href="https://github.com/madd-sh" class="nav__link" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
