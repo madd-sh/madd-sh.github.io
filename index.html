@@ -222,25 +222,19 @@
       </header>
 
       <div class="agents__diagram agents__diagram--contract-centric">
-        <!-- Writers row -->
-        <div class="agents__writers">
+        <!-- Spec at top -->
+        <div class="agents__spec-top">
           <div class="agent-box agent-box--writer">
             <div class="agent-box__icon">📋</div>
             <div class="agent-box__name" data-i18n="agents.spec">Spec</div>
             <div class="agent-box__role" data-i18n="agents.diagram_spec_role">Formalise l'intention</div>
           </div>
-          <div class="agent-box agent-box--writer">
-            <div class="agent-box__icon">📝</div>
-            <div class="agent-box__name" data-i18n="agents.scribe">Scribe</div>
-            <div class="agent-box__role" data-i18n="agents.diagram_scribe_role">Documente la réalité</div>
-          </div>
         </div>
 
-        <!-- Arrows down to contract -->
-        <div class="agents__arrows-down">
+        <!-- Arrow down to contract -->
+        <div class="agents__arrow-single">
           <span class="agent-arrow agent-arrow--down">↓</span>
-          <span class="agent-arrow-label" data-i18n="agents.label_feed">alimentent</span>
-          <span class="agent-arrow agent-arrow--down">↓</span>
+          <span class="agent-arrow-label" data-i18n="agents.label_feed">alimente</span>
         </div>
 
         <!-- Central Contract -->
@@ -259,17 +253,35 @@
           <span class="agent-arrow agent-arrow--down">↓</span>
         </div>
 
-        <!-- Readers row -->
+        <!-- Readers row with arrow between -->
         <div class="agents__readers">
           <div class="agent-box agent-box--reader">
             <div class="agent-box__icon">⚡</div>
             <div class="agent-box__name" data-i18n="agents.dev">Dev</div>
             <div class="agent-box__role" data-i18n="agents.diagram_dev_role">Implémente le contrat</div>
           </div>
+          <div class="agents__horizontal-arrow">
+            <span class="agent-arrow">→</span>
+          </div>
           <div class="agent-box agent-box--reader">
             <div class="agent-box__icon">🔍</div>
             <div class="agent-box__name" data-i18n="agents.audit">Audit</div>
             <div class="agent-box__role" data-i18n="agents.diagram_audit_role">Vérifie contre le contrat</div>
+          </div>
+        </div>
+
+        <!-- Arrow up from Scribe (retro-spec) -->
+        <div class="agents__arrow-single agents__arrow-up">
+          <span class="agent-arrow-label" data-i18n="agents.label_retrospec">rétro-spécifie</span>
+          <span class="agent-arrow agent-arrow--up">↑</span>
+        </div>
+
+        <!-- Scribe at bottom -->
+        <div class="agents__scribe-bottom">
+          <div class="agent-box agent-box--writer">
+            <div class="agent-box__icon">📝</div>
+            <div class="agent-box__name" data-i18n="agents.scribe">Scribe</div>
+            <div class="agent-box__role" data-i18n="agents.diagram_scribe_role">Documente la réalité</div>
           </div>
         </div>
       </div>
