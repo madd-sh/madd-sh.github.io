@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les Skills MADD - Specification, Development, Audit, Retro-Spec, Correction. Contrats de connaissance pour le Multi-Agent Driven Development.">
+
+  <title>Skills — MADD</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2300ff88' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='70' font-family='monospace' fill='%230a0a0a'>M</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">M</span>
+        <span>MADD</span>
+      </a>
+
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav__links">
+        <li><a href="index.html#problem" class="nav__link">Problème</a></li>
+        <li><a href="index.html#principles" class="nav__link">Principes</a></li>
+        <li><a href="index.html#agents" class="nav__link">Agents</a></li>
+        <li><a href="concepts.html" class="nav__link">Concepts</a></li>
+        <li><a href="skills.html" class="nav__link nav__link--active">Skills</a></li>
+        <li><a href="manifesto.html" class="nav__link">Manifeste</a></li>
+        <li><a href="https://github.com/madd-sh" class="nav__link" target="_blank">GitHub ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container container--narrow">
+      <h3>Contrats de Connaissance</h3>
+      <h1>Les Skills MADD</h1>
+      <p>Les skills injectent la connaissance à jour et définissent les critères de qualité entre agents. Chaque transition est médiatisée par un skill explicite.</p>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container container--narrow">
+
+      <!-- Introduction -->
+      <h2 id="pourquoi">Pourquoi les Skills ?</h2>
+
+      <p>Les modèles d'IA ont des données d'entraînement qui peuvent être obsolètes. Ils ne connaissent pas :</p>
+      <ul>
+        <li>Les conventions spécifiques de votre projet</li>
+        <li>Les versions récentes des frameworks</li>
+        <li>Les décisions architecturales de votre équipe</li>
+        <li>Les critères de qualité de votre organisation</li>
+      </ul>
+
+      <p><strong>Les skills comblent ce gap.</strong> Ce sont des documents structurés qui injectent le contexte manquant et définissent les règles du jeu.</p>
+
+      <!-- Types de skills -->
+      <h2 id="types">Types de Skills</h2>
+
+      <div class="not-table">
+        <div class="not-row">
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Skills Publics</span>
+          <span class="not-row__right">Documentation framework, best practices générales</span>
+        </div>
+        <div class="not-row">
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Skills Projet</span>
+          <span class="not-row__right">Conventions internes, architecture, patterns maison</span>
+        </div>
+        <div class="not-row">
+          <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Skills Delta</span>
+          <span class="not-row__right">Patches temporaires de connaissance (nouvelle version, hotfix)</span>
+        </div>
+      </div>
+
+      <!-- Skill de Spécification -->
+      <h2 id="specification">Skill de Spécification</h2>
+
+      <p><strong>Agent cible :</strong> Agent Spec</p>
+      <p><strong>Transition :</strong> Besoin → Intention Document + Contrat</p>
+
+      <p>Guide la production d'Intention Documents structurés avec des requirements vérifiables.</p>
+
+      <h3>Contenu type</h3>
+      <div class="code-block">
+        <pre><code># Specification Skill
+
+## Objectif
+Produire des Intention Documents structurés et des contrats exécutables.
+
+## Structure obligatoire d'un Intention Document
+- Contexte : Problème business à résoudre
+- Objectif : Ce que l'utilisateur pourra faire
+- Requirements : Liste numérotée (REQ-XXX)
+- Critères de validation : Un minimum par requirement
+- Hors scope : Ce qui n'est pas inclus
+- Dépendances : Prérequis techniques
+
+## Règles
+- Chaque requirement DOIT avoir au moins un critère de validation
+- Les critères DOIVENT être automatisables (test, schema, assertion)
+- Le hors scope est OBLIGATOIRE (évite les dérives)
+- Pas de "comment" — uniquement "pourquoi" et "quoi"
+
+## Anti-patterns à éviter
+- Requirements vagues ("améliorer la performance")
+- Critères subjectifs ("doit être rapide")
+- Scope implicite (tout ce qui n'est pas dit est hors scope)
+
+## Format de sortie
+Markdown structuré, versionnable avec le code.</code></pre>
+      </div>
+
+      <!-- Skill de Développement -->
+      <h2 id="development">Skill de Développement</h2>
+
+      <p><strong>Agent cible :</strong> Agent Dev</p>
+      <p><strong>Transition :</strong> Intention Document → Code</p>
+
+      <p>Définit les conventions, patterns et contraintes que l'implémentation doit respecter.</p>
+
+      <h3>Contenu type</h3>
+      <div class="code-block">
+        <pre><code># Development Skill
+
+## Stack technique
+- Framework : Next.js 14 (App Router)
+- Language : TypeScript strict
+- Style : Tailwind CSS
+- State : Zustand
+- Tests : Vitest + Playwright
+
+## Conventions de code
+- Naming : camelCase pour variables, PascalCase pour composants
+- Fichiers : kebab-case
+- Exports : Named exports uniquement (pas de default)
+
+## Patterns obligatoires
+- Server Components par défaut, Client Components explicites
+- Validation Zod sur toutes les entrées utilisateur
+- Error boundaries par route
+
+## Anti-patterns interdits
+- any TypeScript
+- console.log en production
+- Mutations directes de state
+- Imports relatifs au-delà de 2 niveaux (../../..)
+
+## Structure de fichiers
+/src
+  /app          → Routes Next.js
+  /components   → Composants réutilisables
+  /lib          → Utilitaires et helpers
+  /hooks        → Custom hooks
+  /types        → Types TypeScript
+  /services     → Logique métier</code></pre>
+      </div>
+
+      <!-- Skill d'Audit -->
+      <h2 id="audit">Skill d'Audit (Due Diligence)</h2>
+
+      <p><strong>Agent cible :</strong> Agent Audit</p>
+      <p><strong>Transition :</strong> Code → Rapport d'Audit</p>
+
+      <p>Liste les critères de validation, les patterns à détecter, le format du rapport.</p>
+
+      <h3>Contenu type</h3>
+      <div class="code-block">
+        <pre><code># Audit Skill (Due Diligence)
+
+## Objectif
+Analyser le code produit et vérifier l'alignement avec l'intention.
+
+## Critères d'analyse
+
+### 1. Alignement fonctionnel
+- Chaque requirement de l'Intention Document est-il implémenté ?
+- Les critères de validation passent-ils ?
+- Y a-t-il du code hors scope ?
+
+### 2. Qualité technique
+- Respect des conventions du Development Skill
+- Absence des anti-patterns listés
+- Couverture de tests suffisante
+
+### 3. Sécurité
+- Validation des entrées utilisateur
+- Pas d'injection SQL/XSS/Command
+- Secrets non exposés dans le code
+
+### 4. Dette technique
+- TODO/FIXME identifiés et documentés
+- Workarounds temporaires signalés
+- Dépendances obsolètes
+
+## Format du rapport
+```
+## Rapport d'Audit - [Feature]
+
+### Statut global : PASS | FAIL | WARNING
+
+### Alignement fonctionnel
+- REQ-001 : ✅ Implémenté | ❌ Manquant | ⚠️ Partiel
+
+### Findings critiques
+1. [Description du problème]
+   - Localisation : fichier:ligne
+   - Impact : [Sécurité|Performance|Fonctionnel]
+   - Recommandation : [Action corrective]
+
+### Findings mineurs
+...
+
+### Dette technique identifiée
+...
+```
+
+## Règles
+- JAMAIS de PASS si un finding critique existe
+- Chaque finding DOIT avoir une localisation précise
+- Les recommandations DOIVENT être actionnables</code></pre>
+      </div>
+
+      <!-- Skill de Rétro-Spécification -->
+      <h2 id="retrospec">Skill de Rétro-Spécification</h2>
+
+      <p><strong>Agent cible :</strong> Agent Scribe</p>
+      <p><strong>Transition :</strong> Code → Rétro-Spécification</p>
+
+      <p>Guide l'analyse objective du code et la production de documentation factuelle.</p>
+
+      <h3>Contenu type</h3>
+      <div class="code-block">
+        <pre><code># Retro-Spec Skill
+
+## Objectif
+Documenter objectivement ce qui existe VRAIMENT dans le code.
+Pas ce que le dev dit avoir fait. Ce qui est là.
+
+## Analyse requise
+
+### 1. Inventaire fonctionnel
+- Quelles fonctionnalités sont implémentées ?
+- Quels endpoints/routes existent ?
+- Quels composants sont disponibles ?
+
+### 2. État de l'implémentation
+- Fonctionnalités complètes vs partielles
+- Code commenté ou désactivé
+- TODO/FIXME/HACK présents
+
+### 3. Dépendances
+- Librairies utilisées + versions
+- APIs externes appelées
+- Services tiers intégrés
+
+### 4. Écarts avec l'intention
+- Requirements implémentés différemment
+- Features non prévues ajoutées
+- Limitations techniques rencontrées
+
+## Format de sortie
+```
+## Rétro-Spécification - [Date]
+
+### État actuel du système
+
+#### Fonctionnalités
+- [Feature 1] : Complète | Partielle | Stub
+- [Feature 2] : ...
+
+#### Architecture réelle
+[Description de l'architecture telle qu'implémentée]
+
+#### Dépendances
+| Package | Version | Usage |
+|---------|---------|-------|
+| ...     | ...     | ...   |
+
+### Écarts identifiés
+| Intention | Réalité | Raison |
+|-----------|---------|--------|
+| ...       | ...     | ...    |
+
+### Dette technique
+- [Item 1] : Localisation, impact estimé
+- [Item 2] : ...
+
+### Points d'attention pour le prochain cycle
+1. ...
+2. ...
+```
+
+## Règles
+- OBJECTIVITÉ absolue — pas d'embellissement
+- FACTUEL — ce qui est constaté, pas interprété
+- UTILE — le prochain Agent Spec doit pouvoir partir de là</code></pre>
+      </div>
+
+      <!-- Skill de Correction -->
+      <h2 id="correction">Skill de Correction</h2>
+
+      <p><strong>Agent cible :</strong> Agent Dev</p>
+      <p><strong>Transition :</strong> Rapport d'Audit → Code corrigé</p>
+
+      <p>Encadre la correction des findings avec traçabilité obligatoire.</p>
+
+      <h3>Contenu type</h3>
+      <div class="code-block">
+        <pre><code># Correction Skill
+
+## Objectif
+Corriger les findings d'audit avec traçabilité complète.
+
+## Process obligatoire
+
+### Pour chaque finding critique
+1. Identifier la cause root (pas juste le symptôme)
+2. Implémenter la correction
+3. Ajouter un test qui aurait détecté le problème
+4. Documenter la correction
+
+### Pour chaque finding mineur
+1. Corriger ou documenter pourquoi c'est acceptable
+2. Si acceptable : ajouter en dette technique explicite
+
+## Format de documentation
+
+```
+## Correction - [Finding ID]
+
+### Problème
+[Description du finding tel qu'identifié par l'audit]
+
+### Cause root
+[Pourquoi ce problème existait]
+
+### Correction appliquée
+[Ce qui a été changé]
+
+### Test ajouté
+[Référence au test qui vérifie la correction]
+
+### Impact
+[Autres parties du code potentiellement affectées]
+```
+
+## Règles
+- JAMAIS de correction sans test associé
+- JAMAIS de "fix" qui casse autre chose (vérifier la regression)
+- Traçabilité finding → commit obligatoire</code></pre>
+      </div>
+
+      <!-- Créer vos skills -->
+      <h2 id="custom">Créer vos propres Skills</h2>
+
+      <p>Les skills fournis sont des templates. Adaptez-les à votre contexte :</p>
+
+      <ol>
+        <li><strong>Identifiez les frictions</strong> — Où l'agent se trompe régulièrement ?</li>
+        <li><strong>Documentez la connaissance manquante</strong> — Qu'est-ce qu'il ne sait pas ?</li>
+        <li><strong>Structurez en règles</strong> — Pas de prose, des directives claires</li>
+        <li><strong>Testez et itérez</strong> — Un skill évolue avec le projet</li>
+      </ol>
+
+      <p><strong>Versionnez vos skills</strong> comme du code. Ils font partie de la documentation vivante du projet.</p>
+
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__content">
+      <h2>Prêt à définir vos Skills ?</h2>
+      <p>Commencez par le Specification Skill et le Development Skill. Les autres viendront naturellement.</p>
+      <div class="hero__cta">
+        <a href="https://github.com/madd-sh" class="btn btn--primary" target="_blank">Voir les exemples sur GitHub →</a>
+        <a href="examples.html" class="btn btn--secondary">Voir un Case Study</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2025 MADD — Multi-Agent Driven Development. Open Source sous licence MIT.</p>
+      <ul class="footer__links">
+        <li><a href="manifesto.html" class="footer__link">Manifeste</a></li>
+        <li><a href="https://github.com/madd-sh" class="footer__link" target="_blank">GitHub</a></li>
+        <li><a href="#" class="footer__link">Contribuer</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

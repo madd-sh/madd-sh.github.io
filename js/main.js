@@ -1,4 +1,4 @@
-/* ZDD - Zero-Drift Development
+/* MADD - Multi-Agent Driven Development
    JavaScript for interactions */
 
 document.addEventListener('DOMContentLoaded', function() {
