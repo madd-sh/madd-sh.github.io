@@ -491,6 +491,7 @@ section {
 .hero__content {
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .hero__badge {
@@ -553,28 +554,28 @@ section {
   left: 0;
   top: 0;
   color: var(--color-accent);
-  clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 0 0 0);
   animation: word-switch 6s cubic-bezier(0.7, 0, 0.3, 1) infinite;
 }
 
 @keyframes word-switch {
   0%, 40% {
-    clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 0 0 0);
   }
   45% {
     clip-path: inset(0 0 0 0);
     text-shadow: 2px 0 var(--color-accent), -2px 0 #00fff0;
   }
   50%, 90% {
-    clip-path: inset(0 0 0 0);
+    clip-path: inset(0 100% 0 0);
     text-shadow: none;
   }
   95% {
-    clip-path: inset(0 0 0 0);
+    clip-path: inset(0 100% 0 0);
     text-shadow: 2px 0 var(--color-accent), -2px 0 #00fff0;
   }
   100% {
-    clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -582,6 +583,8 @@ section {
   font-size: clamp(1.125rem, 2vw, 1.5rem);
   color: var(--color-text-secondary);
   max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: var(--space-xl);
   animation: fadeInUp 0.6s ease 0.2s backwards;
 }
@@ -590,6 +593,7 @@ section {
   display: flex;
   gap: var(--space-md);
   flex-wrap: wrap;
+  justify-content: center;
   animation: fadeInUp 0.6s ease 0.3s backwards;
 }
 
@@ -609,6 +613,8 @@ section {
    ======================================== */
 .install-block {
   margin-top: var(--space-xl);
+  margin-left: auto;
+  margin-right: auto;
   max-width: 600px;
   border: 1px solid var(--color-border);
   border-radius: 6px;
