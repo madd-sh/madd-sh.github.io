@@ -544,39 +544,57 @@ section {
 
 /* Word switch effect - CSS only */
 .word-switch {
-  display: inline-block;
-  position: relative;
+  display: inline-grid;
   color: var(--color-accent);
 }
 
-.word-switch::after {
-  content: attr(data-word-alt);
-  position: absolute;
-  left: 0;
-  top: 0;
+.word-switch__word {
+  grid-area: 1 / 1;
   color: var(--color-accent);
-  clip-path: inset(0 0 0 0);
-  animation: word-switch 6s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+  opacity: 0;
+  animation-duration: 6s;
+  animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  animation-iteration-count: infinite;
 }
 
-@keyframes word-switch {
-  0%, 40% {
-    clip-path: inset(0 0 0 0);
+.word-switch__word--primary {
+  opacity: 1;
+  animation-name: word-switch-primary;
+}
+
+.word-switch__word--alt {
+  animation-name: word-switch-alt;
+}
+
+@keyframes word-switch-primary {
+  0%, 44% {
+    opacity: 1;
   }
   45% {
-    clip-path: inset(0 0 0 0);
+    opacity: 1;
     text-shadow: 2px 0 var(--color-accent), -2px 0 #00fff0;
   }
-  50%, 90% {
-    clip-path: inset(0 100% 0 0);
+  50%, 100% {
+    opacity: 0;
     text-shadow: none;
   }
+}
+
+@keyframes word-switch-alt {
+  0%, 49% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  50%, 94% {
+    opacity: 1;
+  }
   95% {
-    clip-path: inset(0 100% 0 0);
+    opacity: 1;
     text-shadow: 2px 0 var(--color-accent), -2px 0 #00fff0;
   }
   100% {
-    clip-path: inset(0 0 0 0);
+    opacity: 0;
+    text-shadow: none;
   }
 }
 
