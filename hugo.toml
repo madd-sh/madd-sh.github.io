@@ -1,7 +1,7 @@
 # MADD - Multi-Agent Driven Development
 # Hugo Configuration
 
-baseURL = "https://madd-sh.github.io/"
+baseURL = "https://madd.sh/"
 languageCode = "en"
 title = "MADD — Multi-Agent Driven Development"
 defaultContentLanguage = "en"

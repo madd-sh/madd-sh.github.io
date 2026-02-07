@@ -31,19 +31,19 @@ In practice, a 5th role — the **Orchestrator** — can coordinate the flow bet
 
 ## Pages
 
-- [Home](https://madd-sh.github.io/): Main page with overview, problem statement, principles, and quickstart guide
-- [Concepts](https://madd-sh.github.io/concepts.html): Core concepts of MADD methodology - Intention Document, Executable Contract, Retro-Specification, Operations
-- [Skills](https://madd-sh.github.io/skills.html): Skills documentation - knowledge contracts for agents
-- [Manifesto](https://madd-sh.github.io/manifesto.html): Full MADD manifesto - founding document
-- [Examples](https://madd-sh.github.io/examples.html): Case studies and examples
+- [Home](https://madd.sh/): Main page with overview, problem statement, principles, and quickstart guide
+- [Concepts](https://madd.sh/concepts.html): Core concepts of MADD methodology - Intention Document, Executable Contract, Retro-Specification, Operations
+- [Skills](https://madd.sh/skills.html): Skills documentation - knowledge contracts for agents
+- [Manifesto](https://madd.sh/manifesto.html): Full MADD manifesto - founding document
+- [Examples](https://madd.sh/examples.html): Case studies and examples
 
 ## Pages (French versions)
 
-- [Accueil](https://madd-sh.github.io/fr/): Page principale
-- [Concepts](https://madd-sh.github.io/fr/concepts.html): Les concepts MADD
-- [Skills](https://madd-sh.github.io/fr/skills.html): Les Skills MADD
-- [Manifeste](https://madd-sh.github.io/fr/manifesto.html): Le Manifeste MADD
-- [Exemples](https://madd-sh.github.io/fr/examples.html): Études de cas
+- [Accueil](https://madd.sh/fr/): Page principale
+- [Concepts](https://madd.sh/fr/concepts.html): Les concepts MADD
+- [Skills](https://madd.sh/fr/skills.html): Les Skills MADD
+- [Manifeste](https://madd.sh/fr/manifesto.html): Le Manifeste MADD
+- [Exemples](https://madd.sh/fr/examples.html): Études de cas
 
 ## Key Concepts
 
@@ -75,7 +75,7 @@ MADD provides a path from Scrum/Kanban/SAFe:
 ## Links
 
 - [GitHub](https://github.com/madd-sh): Source code and contributions
-- [Full Documentation (HTML)](https://madd-sh.github.io/): Complete website with interactive features
+- [Full Documentation (HTML)](https://madd.sh/): Complete website with interactive features
 - [MADD Boilerplate](https://github.com/madd-sh/madd-boilerplate): Ready-to-use implementation with 5 agents, distributed JSON contract, and audit recommendation system
 
 ## License

@@ -4,7 +4,7 @@ La méthodologie qui garantit **zéro dérive** entre l'intention et l'implémen
 
 ## Site Web
 
-Ce repository contient le site web officiel de MADD : https://madd-sh.github.io/
+Ce repository contient le site web officiel de MADD : https://madd.sh/
 
 ## Qu'est-ce que MADD ?
 
