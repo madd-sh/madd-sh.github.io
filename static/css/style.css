@@ -311,6 +311,7 @@ section {
 .theme-toggle svg {
   width: 20px;
   height: 20px;
+  pointer-events: none;
 }
 
 .theme-toggle__icon--light,
@@ -351,6 +352,7 @@ section {
   font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: 600;
+  pointer-events: none;
 }
 
 /* Language Selector */
@@ -378,6 +380,11 @@ section {
 .lang-selector__btn:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+.lang-selector__btn svg,
+.lang-selector__btn span {
+  pointer-events: none;
 }
 
 .lang-selector__btn svg {
