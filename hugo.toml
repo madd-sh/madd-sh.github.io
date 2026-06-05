@@ -42,9 +42,9 @@ enableGitInfo = true
 
 # Configure outputs for different sections
 [outputs]
-  home = ["HTML", "MD"]
+  home = ["HTML", "MD", "RSS"]
   page = ["HTML", "MD"]
-  section = ["HTML"]
+  section = ["HTML", "RSS"]
 
 # Multilingual configuration
 [languages]

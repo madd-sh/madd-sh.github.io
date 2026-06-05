@@ -15,10 +15,10 @@ nav_github: "GitHub"
 
 # Hero Section
 hero_badge: "Méthodologie Open Source"
-hero_title_main: "Multi-Agent"
+hero_title_main: "Multi-Adversarial"
 hero_title_accent: "Driven Development"
-hero_subtitle: "Quand l'IA code plus vite que vous ne spécifiez, votre méthodologie doit évoluer. MADD fournit le <strong>cadre pour contrôler la dérive</strong> et forcer la convergence entre l'intention et l'implémentation."
-hero_cta_start: "Commencer →"
+hero_subtitle: "Tout le monde fait du développement multi-agent aujourd'hui. La spécificité de MADD, c'est la <strong>revue adversariale systématique</strong> : aucun agent ne valide jamais son propre travail, pour que l'intention et l'implémentation convergent vraiment."
+hero_cta_start: "Voir comment ça marche →"
 hero_cta_concepts: "Explorer les Concepts"
 
 # Bloc d'installation
@@ -225,9 +225,9 @@ quickstart_solo_step3_text: "Passe le code produit à ton agent d'audit avec un 
 quickstart_solo_step4_title: "Génère la rétro-spec"
 quickstart_solo_step4_text: "Un 4ème agent (ou toi) analyse ce qui a été réellement implémenté et met à jour la documentation. C'est ta mémoire projet."
 quickstart_team_step1_title: "Assigne les rôles"
-quickstart_team_step1_text: "Architecte d'Intention (PM/PO), Conducteur d'Agents (dev senior), Arbitre d'Alignement (QA ou pair). Chaque rôle est responsable d'une phase."
+quickstart_team_step1_text: "Architect (PM/PO), Conductor (dev senior), Breaker (QA ou pair). Chaque rôle est responsable d'une phase."
 quickstart_team_step2_title: "Centralise les skills"
-quickstart_team_step2_text: "Un repo partagé avec tous les skills : Spec Skill, Dev Skill, Audit Skill, Retro-Spec Skill. Versionnés comme du code."
+quickstart_team_step2_text: "Un repo partagé avec tous les skills : Specification, Development, Audit, Retro-Specification. Versionnés comme du code."
 quickstart_team_step3_title: "Rétro-spec comme source de vérité"
 quickstart_team_step3_text: "La rétro-spécification est partagée et mise à jour à chaque cycle. C'est le point de départ de toute nouvelle itération."
 quickstart_migration_step1_title: "Sprints → Cycles d'intention"
@@ -249,6 +249,10 @@ cta_btn_concepts: "Explorer les Concepts"
 footer_copy: "© 2026 MADD — Multi-Agent Driven Development. Open Source sous licence MIT."
 footer_github: "GitHub"
 footer_contribute: "Contribuer"
+footer_community: "Communauté"
+
+# Accessibility
+skip_to_content: "Aller au contenu"
 
 # Theme
 theme_light: "Clair"
@@ -392,7 +396,7 @@ concepts_operations_why: "Quand l'IA accélère le développement, l'écart entr
 concepts_cta_title: "Prêt à structurer vos développements ?"
 concepts_cta_text: "Découvrez les Skills qui médiatisent chaque transition entre agents."
 concepts_cta_btn_skills: "Explorer les Skills →"
-concepts_cta_btn_examples: "Voir les Case Studies"
+concepts_cta_btn_examples: "Voir les études de cas"
 
 # Skills Page
 skills_page_subtitle: "Le Système de Connaissance"
@@ -488,11 +492,11 @@ skills_lifecycle_boilerplate: "Les <a href=\"https://github.com/madd-sh\" target
 skills_cta_title: "Prêt à définir vos Skills ?"
 skills_cta_text: "Commencez par le Development Skill et l'Audit Skill. Les autres viendront naturellement des besoins de votre projet."
 skills_cta_btn_github: "Voir les exemples sur GitHub →"
-skills_cta_btn_examples: "Voir un Case Study"
+skills_cta_btn_examples: "Voir une étude de cas"
 
 # Examples Page
 examples_page_subtitle: "Preuves par l'Exemple"
-examples_page_title: "Case Studies"
+examples_page_title: "Études de cas"
 examples_page_intro: "Des exemples concrets d'application de MADD en conditions réelles. Ce qui a marché, ce qui a échoué, les leçons apprises."
 examples_cta_title: "Prêt à tester MADD ?"
 examples_cta_text: "Commencez par un petit projet. Documentez. Partagez."

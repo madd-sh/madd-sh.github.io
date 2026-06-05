@@ -1,5 +1,5 @@
 ---
-title: "Case Studies"
+title: "Études de cas"
 description: "Des exemples concrets d'application de MADD en conditions réelles. Ce qui a marché, ce qui a échoué, les leçons apprises."
 type: "page"
 layout: "examples"
@@ -71,7 +71,7 @@ Avec une équipe classique et Scrum : planning, sprints, code reviews, QA... est
 - **Dette technique** : 12 items identifiés et documentés (vs découverts au fil de l'eau)
 - **Couverture de tests** : 78% (vs objectif 70%)
 
-## Autres Case Studies
+## Autres études de cas
 
 <p style="color: var(--color-text-muted);">D'autres études de cas sont en préparation :</p>
 
@@ -79,19 +79,19 @@ Avec une équipe classique et Scrum : planning, sprints, code reviews, QA... est
   <article class="problem__card" data-number="02" style="opacity: 0.6;">
     <h3 style="color: var(--color-text-muted);">Migration Legacy</h3>
     <p>Réécriture d'une application PHP monolithique vers Next.js avec MADD. Comment les rétro-specs ont permis de ne rien oublier.</p>
-    <p style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.75rem;">COMING SOON</p>
+    <p style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.75rem;">BIENTÔT DISPONIBLE</p>
   </article>
 
   <article class="problem__card" data-number="03" style="opacity: 0.6;">
     <h3 style="color: var(--color-text-muted);">Équipe Distribuée</h3>
     <p>Application de MADD dans une équipe de 5 personnes sur 3 fuseaux horaires. Rôles, coordination, outils.</p>
-    <p style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.75rem;">COMING SOON</p>
+    <p style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.75rem;">BIENTÔT DISPONIBLE</p>
   </article>
 
   <article class="problem__card" data-number="04" style="opacity: 0.6;">
     <h3 style="color: var(--color-text-muted);">Startup MVP</h3>
     <p>De l'idée au MVP en 1 semaine. Comment MADD permet de valider rapidement sans accumuler de dette.</p>
-    <p style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.75rem;">COMING SOON</p>
+    <p style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.75rem;">BIENTÔT DISPONIBLE</p>
   </article>
 </div>
 
@@ -99,8 +99,8 @@ Avec une équipe classique et Scrum : planning, sprints, code reviews, QA... est
 
 Vous avez appliqué MADD sur un projet ? Partagez votre retour d'expérience :
 
-- **GitHub Discussions** — Pour les retours détaillés
-- **Pull Request** — Pour contribuer un case study complet
-- **Issues** — Pour signaler des frictions ou proposer des améliorations
+- **[GitHub Discussions](https://github.com/madd-sh/madd/discussions)** : pour les retours détaillés
+- **[Pull Request](https://github.com/madd-sh/madd)** : pour contribuer une étude de cas complète
+- **[Issues](https://github.com/madd-sh/madd/issues)** : pour signaler des frictions ou proposer des améliorations
 
 Les échecs sont aussi précieux que les succès. Ce qui n'a pas marché nous intéresse autant.
