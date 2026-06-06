@@ -52,8 +52,11 @@
 <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
 {{ end }}
 <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{/* x-default points at the English (default-language) version of this page */}}
 {{- $xdefault := .Permalink -}}
-{{- if ne .Lang "en" -}}{{- range .Translations -}}{{- if eq .Lang "en" -}}{{- $xdefault = .Permalink -}}{{- end -}}{{- end -}}{{- end -}}
+{{- with where .Translations "Lang" "en" -}}
+  {{- $xdefault = (index . 0).Permalink -}}
+{{- end -}}
 <link rel="alternate" hreflang="x-default" href="{{ $xdefault }}">
 
 <!-- MD version for LLMs -->
