@@ -24,6 +24,8 @@
 
   --color-warning: #CC785C;
   --color-error: #d64545;
+  --color-success: #4ade80;
+  --color-info: #60a5fa;
 
   --color-border: #3a3a38;
   --color-border-strong: #4a4a47;
@@ -72,6 +74,8 @@
 
   --color-warning: #CC785C;
   --color-error: #d64545;
+  --color-success: #1a8c46;
+  --color-info: #4456c7;
 
   --color-border: #d4d3ce;
   --color-border-strong: #b8b7b2;
@@ -1519,9 +1523,6 @@ section {
 /* ========================================
    QUICKSTART SECTION
    ======================================== */
-.quickstart {
-}
-
 .quickstart__tabs {
   display: flex;
   gap: var(--space-sm);

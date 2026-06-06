@@ -52,6 +52,9 @@
 <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
 {{ end }}
 <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{- $xdefault := .Permalink -}}
+{{- if ne .Lang "en" -}}{{- range .Translations -}}{{- if eq .Lang "en" -}}{{- $xdefault = .Permalink -}}{{- end -}}{{- end -}}{{- end -}}
+<link rel="alternate" hreflang="x-default" href="{{ $xdefault }}">
 
 <!-- MD version for LLMs -->
 {{ if .OutputFormats.Get "MD" }}
@@ -101,16 +104,13 @@
       "inLanguage": "{{ .Lang }}"
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": "CreativeWork",
       "name": "MADD",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Any",
+      "headline": "Multi-Agent Driven Development",
       "description": "An open-source methodology for AI-assisted development that provides the framework to control drift and drive convergence between intention and implementation.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
+      "keywords": "Multi-Agent Driven Development, AI-assisted development, methodology, drift control, adversarial review, agentic engineering",
+      "author": { "@id": "{{ .Site.BaseURL }}#organization" },
+      "license": "https://opensource.org/licenses/MIT",
       "url": "{{ .Site.BaseURL }}"
     }
   ]
