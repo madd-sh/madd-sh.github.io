@@ -19,6 +19,8 @@
   --color-accent: #CC785C;
   --color-accent-dim: #b56a50;
   --color-accent-glow: rgba(204, 120, 92, 0.2);
+  /* Accent used for TEXT/links; on dark it equals the brand accent */
+  --color-accent-text: var(--color-accent);
 
   --color-warning: #CC785C;
   --color-error: #d64545;
@@ -65,6 +67,8 @@
   --color-accent: #CC785C;
   --color-accent-dim: #b56a50;
   --color-accent-glow: rgba(204, 120, 92, 0.15);
+  /* Darker accent for text/links so contrast on white passes WCAG AA (5.4:1) */
+  --color-accent-text: #A8512F;
 
   --color-warning: #CC785C;
   --color-error: #d64545;
@@ -106,6 +110,48 @@ body {
 }
 
 /* ========================================
+   ACCESSIBILITY: focus, skip-link, motion
+   ======================================== */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip-to-content link (reuses sr-only positioning until focused) */
+.skip-link {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 2000;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transform: translateY(-150%);
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  color: var(--color-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ========================================
    TYPOGRAPHY
    ======================================== */
 h1, h2, h3, h4, h5, h6 {
@@ -127,7 +173,7 @@ h2 {
 
 h3 {
   font-size: 1.25rem;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: var(--space-md);
@@ -139,7 +185,7 @@ p {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
@@ -159,7 +205,7 @@ code {
   background: var(--color-surface);
   padding: 0.2em 0.4em;
   border-radius: 3px;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 /* ========================================
@@ -239,11 +285,11 @@ section {
 }
 
 .nav__link:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .nav__link--active {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 /* Mobile nav toggle */
@@ -547,52 +593,6 @@ section {
 .hero__title-accent {
   color: var(--color-accent);
   position: relative;
-}
-
-/* Word switch effect - CSS only */
-.word-switch {
-  display: inline-grid;
-  color: var(--color-accent);
-  text-align: left;
-  justify-items: start;
-  vertical-align: baseline;
-}
-
-.word-switch__word {
-  grid-area: 1 / 1;
-  justify-self: start;
-  color: var(--color-accent);
-  opacity: 0;
-  animation-duration: 6s;
-  animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-  animation-iteration-count: infinite;
-}
-
-.word-switch__word--primary {
-  opacity: 1;
-  animation-name: word-switch-primary;
-}
-
-.word-switch__word--alt {
-  animation-name: word-switch-alt;
-}
-
-@keyframes word-switch-primary {
-  0%, 49% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
-}
-
-@keyframes word-switch-alt {
-  0%, 49% {
-    opacity: 0;
-  }
-  50%, 100% {
-    opacity: 1;
-  }
 }
 
 .hero__subtitle {

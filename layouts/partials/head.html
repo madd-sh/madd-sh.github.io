@@ -58,6 +58,11 @@
 <link rel="alternate" type="text/markdown" href="{{ (.OutputFormats.Get "MD").Permalink }}">
 {{ end }}
 
+<!-- RSS feed -->
+{{ with .OutputFormats.Get "RSS" }}
+<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">
+{{ end }}
+
 <!-- Schema.org structured data -->
 <script type="application/ld+json">
 {{- if .IsHome -}}

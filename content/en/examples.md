@@ -99,8 +99,8 @@ With a classic team and Scrum: planning, sprints, code reviews, QA... realistic 
 
 Have you applied MADD on a project? Share your feedback:
 
-- **GitHub Discussions** — For detailed feedback
-- **Pull Request** — To contribute a complete case study
-- **Issues** — To report friction or propose improvements
+- **[GitHub Discussions](https://github.com/madd-sh/madd/discussions)**: for detailed feedback
+- **[Pull Request](https://github.com/madd-sh/madd)**: to contribute a complete case study
+- **[Issues](https://github.com/madd-sh/madd/issues)**: to report friction or propose improvements
 
 Failures are as valuable as successes. What didn't work interests us just as much.
