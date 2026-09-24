@@ -16,10 +16,6 @@ disableKinds = ["taxonomy", "term"]
 # Enable Git info for lastmod
 enableGitInfo = true
 
-# Build settings
-[build]
-  writeStats = true
-
 # Media types
 [mediaTypes]
   [mediaTypes."text/markdown"]
@@ -40,9 +36,20 @@ enableGitInfo = true
     permalinkable = true
     notAlternative = true
 
+  [outputFormats.Manifest]
+    mediaType = "application/json"
+    baseName = "manifest"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.LLMS]
+    mediaType = "text/plain"
+    baseName = "llms"
+    isPlainText = true
+    notAlternative = true
+
 # Configure outputs for different sections
 [outputs]
-  home = ["HTML", "MD", "RSS"]
+  home = ["HTML", "MD", "RSS", "Manifest", "LLMS"]
   page = ["HTML", "MD"]
   section = ["HTML", "RSS"]
 
@@ -68,51 +75,15 @@ enableGitInfo = true
 [params]
   author = "MADD Community"
   githubUrl = "https://github.com/madd-sh"
+  sourceRevision = "feat/madd-relaunch-site"
 
 # Permalinks removed - using uglyURLs = true instead
 
-# Menu configuration
-[menus]
-  [[menus.main]]
-    name = "Agents"
-    pageRef = "/#agents"
-    weight = 1
-  [[menus.main]]
-    name = "Problem"
-    pageRef = "/#problem"
-    weight = 2
-  [[menus.main]]
-    name = "Principles"
-    pageRef = "/#principles"
-    weight = 3
-  [[menus.main]]
-    name = "Concepts"
-    pageRef = "/concepts"
-    weight = 4
-  [[menus.main]]
-    name = "Skills"
-    pageRef = "/skills"
-    weight = 5
-  [[menus.main]]
-    name = "Case Studies"
-    pageRef = "/examples"
-    weight = 6
-  [[menus.main]]
-    name = "GitHub"
-    url = "https://github.com/madd-sh"
-    weight = 7
-    [menus.main.params]
-      external = true
-
-# Markup configuration
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+  [markup.goldmark.renderer]
+    unsafe = false
   [markup.highlight]
-    noClasses = false
+    codeFences = false
 
-# Security settings
-[security]
-  [security.funcs]
-    getenv = ["^HUGO_", "^CI$"]
+[security.funcs]
+  getenv = ["^HUGO_", "^CI$"]

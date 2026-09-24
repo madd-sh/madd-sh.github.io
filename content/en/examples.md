@@ -1,106 +1,36 @@
 ---
-title: "Case Studies"
-description: "Concrete examples of applying MADD in real conditions. What worked, what failed, lessons learned."
-type: "page"
-layout: "examples"
+title: "Start with one observable change."
+linkTitle: "Walkthrough"
+description: "A worked exercise for a developer, a reviewer and CI. This is a synthetic example, not a productivity benchmark."
+weight: 3
+eyebrow: "INTENT / CONTRACT / EVIDENCE"
+status: "Method · 0.1.3 released / 0.2.0 candidate"
 ---
 
-## Multi-Tenant Platform in 2 Days
+## The intention
 
-<div class="case-study-meta" style="background: var(--color-bg-card); border: 1px solid var(--color-border); padding: var(--space-lg); margin-bottom: var(--space-lg);">
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-md);">
-    <div>
-      <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase;">Duration</span>
-      <p style="color: var(--color-accent); margin: 0; font-weight: 600;">2 days</p>
-    </div>
-    <div>
-      <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase;">Classic Estimate</span>
-      <p style="color: var(--color-text-secondary); margin: 0;">~12 months</p>
-    </div>
-    <div>
-      <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase;">Agents Used</span>
-      <p style="margin: 0;">Gemini, Opus, GPT</p>
-    </div>
-    <div>
-      <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); text-transform: uppercase;">Status</span>
-      <p style="color: var(--color-accent); margin: 0;">In Production</p>
-    </div>
-  </div>
-</div>
+A reader should be able to find the contract documentation using the keyboard without losing ordinary navigation. The site relaunch is the pilot; this exercise narrows it to one behavior.
 
-### Context
+## The requirement
 
-A complete multi-tenant SaaS platform: authentication, organization management, data isolation, billing, admin dashboard.
+**REQ-F-001 — Open and close documentation search.**
 
-With a classic team and Scrum: planning, sprints, code reviews, QA... realistic estimate of 10-14 months.
+- Given focus is outside an editable field, when the reader presses Ctrl/Cmd+K, then a labeled search dialog opens and focuses its input.
+- Given the dialog is open, when the reader presses Escape, then it closes and restores focus to the opener.
+- Given JavaScript is disabled, when the reader follows the visible navigation, then the documentation remains reachable.
 
-### The MADD Approach
+The acceptance target is a browser test of focus and navigation. A test file binding is only a reference until the test has actually executed.
 
-<div class="not-table">
-  <div class="not-row">
-    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Architect Agent (Gemini)</span>
-    <span class="not-row__right">Roadmap, Intention Documents, foundation prioritization</span>
-  </div>
-  <div class="not-row">
-    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Maker Agent (Opus)</span>
-    <span class="not-row__right">Contract-guided implementation</span>
-  </div>
-  <div class="not-row">
-    <span class="not-row__left" style="text-decoration: none; color: var(--color-accent);">Breaker Agent (GPT)</span>
-    <span class="not-row__right">Due diligence on each delivery</span>
-  </div>
-</div>
+## Make the failure visible
 
-### What Made the Difference
+Run the acceptance check before the implementation. Confirm that it fails for the missing behavior, rather than an unrelated setup error. Record the command and exit result. Implement the smallest accessible behavior, then run the same check again.
 
-1. **Foundations first** — Multi-tenant isolation was implemented before any feature. No "we'll see later".
-2. **Executable contracts** — Every requirement had tests. The Maker Agent couldn't "cheat".
-3. **Independent audit** — GPT detected 3 security flaws that the Maker Agent had missed.
-4. **No hidden debt** — The retro-spec documented 12 technical limitations from the start.
+## Invite the challenge
 
-### Frictions Encountered
+The independent reviewer tries Escape with a populated query, Shift+Tab at the boundary, a text input, a mobile viewport and a page without JavaScript. Record concrete findings and add regression checks for fixes. The author cannot approve their own fraction.
 
-- Gemini had outdated knowledge about Next.js 14 → Delta skills needed
-- Opus tended to over-engineer → Explicit constraints in the Development Skill
-- The Witness was initially the Maker Agent itself → Bias detected, separation enforced
+## Record the observed result
 
-### Measurable Results
+Write the exact candidate revision, checks that ran, review findings and unresolved limitations. Browser automation does not replace a human screen-reader session. Local passing checks are not remote CI attestations or evidence of a deployed release.
 
-- **Time**: 2 days vs 12 months estimated (x180)
-- **Production bugs**: 2 minor in 3 weeks
-- **Technical debt**: 12 items identified and documented (vs discovered along the way)
-- **Test coverage**: 78% (vs target 70%)
-
-## Other Case Studies
-
-<p style="color: var(--color-text-muted);">More case studies are in preparation:</p>
-
-<div class="problem__grid" style="margin-top: var(--space-lg);">
-  <article class="problem__card" data-number="02" style="opacity: 0.6;">
-    <h3 style="color: var(--color-text-muted);">Legacy Migration</h3>
-    <p>Rewriting a monolithic PHP application to Next.js with MADD. How retro-specs ensured nothing was forgotten.</p>
-    <p style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.75rem;">COMING SOON</p>
-  </article>
-
-  <article class="problem__card" data-number="03" style="opacity: 0.6;">
-    <h3 style="color: var(--color-text-muted);">Distributed Team</h3>
-    <p>Applying MADD in a 5-person team across 3 time zones. Roles, coordination, tools.</p>
-    <p style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.75rem;">COMING SOON</p>
-  </article>
-
-  <article class="problem__card" data-number="04" style="opacity: 0.6;">
-    <h3 style="color: var(--color-text-muted);">Startup MVP</h3>
-    <p>From idea to MVP in 1 week. How MADD enables rapid validation without accumulating debt.</p>
-    <p style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.75rem;">COMING SOON</p>
-  </article>
-</div>
-
-## Share Your Experience
-
-Have you applied MADD on a project? Share your feedback:
-
-- **[GitHub Discussions](https://github.com/madd-sh/madd/discussions)**: for detailed feedback
-- **[Pull Request](https://github.com/madd-sh/madd)**: to contribute a complete case study
-- **[Issues](https://github.com/madd-sh/madd/issues)**: to report friction or propose improvements
-
-Failures are as valuable as successes. What didn't work interests us just as much.
+[Read the delivery loop](concepts.html) · [See the evidence rules](evidence.html)

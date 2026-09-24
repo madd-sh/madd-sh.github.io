@@ -1,0 +1,8 @@
+{{- $resources := slice -}}
+{{- range .Sites -}}{{- range (slice .Home | append .RegularPages.ByWeight) -}}
+{{- $metadata := dict "title" .LinkTitle "language" .Lang "status" .Params.status "source" (printf "https://github.com/madd-sh/madd-sh.github.io/blob/%s/content/%s/%s" .Site.Params.sourceRevision .Lang .File.LogicalName) -}}
+{{- $resources = $resources | append (merge $metadata (dict "url" .Permalink "mediaType" "text/html")) -}}
+{{- with .OutputFormats.Get "MD" -}}{{- $resources = $resources | append (merge $metadata (dict "url" .Permalink "mediaType" "text/markdown")) -}}{{- end -}}
+{{- end -}}{{- end -}}
+{{- range .Site.Data.resources -}}{{- $resources = $resources | append . -}}{{- end -}}
+{{- dict "format" "madd-docs-index/1" "release" "0.1.3" "candidate" "0.2.0" "resources" $resources | jsonify -}}

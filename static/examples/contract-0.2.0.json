@@ -1,0 +1,60 @@
+{
+  "$schema": "https://madd.sh/schemas/draft/0.2.0/contract.schema.json",
+  "meta": {
+    "format_version": "0.2.0",
+    "name": "Synthetic documentation example",
+    "version": "0.1.0",
+    "status": "draft",
+    "owner": "project-owner"
+  },
+  "intention": {
+    "context": "Readers need to find documentation using the keyboard while ordinary navigation keeps working.",
+    "objectives": [
+      {
+        "id": "OBJ-001",
+        "description": "Make documentation search usable with pointer, keyboard and assistive technology."
+      }
+    ]
+  },
+  "functional": {
+    "requirements": [
+      {
+        "id": "REQ-F-001",
+        "description": "A reader can open, use and close documentation search with the keyboard.",
+        "acceptance_criteria": [
+          "Ctrl or Cmd + K opens search outside editable fields and focuses the input.",
+          "Arrow keys and Enter select and follow a documentation link.",
+          "Escape closes search and restores focus to its opener.",
+          "Ordinary documentation navigation works without JavaScript."
+        ],
+        "validation": {
+          "method": "test",
+          "test_id": "TEST-001"
+        }
+      }
+    ]
+  },
+  "tasks": {
+    "items": [
+      {
+        "id": "TASK-001",
+        "title": "Implement the first requirement",
+        "status": "pending",
+        "requirements": [
+          "REQ-F-001"
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "id": "TEST-001",
+        "type": "contract",
+        "requirement": "REQ-F-001",
+        "description": "Check keyboard navigation, focus restoration and no-JavaScript access in the browser.",
+        "binding": "planned",
+        "ref": null,
+        "status": "pending"
+      }
+    ]
+  }
+}

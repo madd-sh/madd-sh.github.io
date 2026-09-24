@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://madd.sh/schemas/legacy-0.1.3/contract.schema.json",
+    "mediaType": "application/schema+json",
+    "version": "0.1.3",
+    "status": "released",
+    "sha256": "a70147c6d3ef53104e5de05ee53e3bcdab29ab08796e147f103c13a2e37b8fb3"
+  },
+  {
+    "url": "https://madd.sh/schemas/draft/0.2.0/contract.schema.json",
+    "mediaType": "application/schema+json",
+    "version": "0.2.0",
+    "status": "candidate",
+    "sha256": "847a0f66ac07da74ade2e1ff52adb13b560a7f97c0e5b1b9c5ef88adbf66b152"
+  },
+  {
+    "url": "https://madd.sh/examples/contract-0.2.0.json",
+    "mediaType": "application/json",
+    "version": "0.2.0",
+    "status": "candidate",
+    "sha256": "2bb8764ca82206ba027d6dcfba61cf6edd4f9f6e98a47b887b42b95896449d5b"
+  }
+]

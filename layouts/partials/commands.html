@@ -1,0 +1,7 @@
+<dialog id="command-dialog" aria-labelledby="command-title" aria-describedby="command-help">
+<div class="dialog-heading"><h2 id="command-title">{{ i18n "search" }}</h2><button id="close-commands" type="button">{{ i18n "close" }} <kbd>Esc</kbd></button></div>
+<form id="command-form"><label for="command-input">{{ i18n "filter" }}</label><div class="command-input-wrap"><span aria-hidden="true">&gt;</span><input id="command-input" type="search" autocomplete="off" spellcheck="false"></div></form>
+<p id="result-count" role="status" data-count="{{ i18n "count" }}" data-empty="{{ i18n "empty" }}"></p>
+<ul id="command-results">{{ range (slice .Site.Home | append (.Site.RegularPages.ByWeight)) }}<li><a href="{{ .RelPermalink }}" data-search="{{ .Description }}">{{ .LinkTitle }}<small>{{ .RelPermalink }}</small></a></li>{{ end }}</ul>
+<p id="command-help">{{ i18n "keyboard_help" }}</p>
+</dialog>

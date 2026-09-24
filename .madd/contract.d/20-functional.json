@@ -1,0 +1,76 @@
+{
+  "functional": {
+    "requirements": [
+      {
+        "id": "REQ-F-001",
+        "source_ids": [
+          "M06"
+        ],
+        "description": "Published and candidate capabilities stay distinct in EN and FR.",
+        "acceptance_criteria": [
+          "Every page identifies released 0.1.3 and candidate 0.2.0; translated routes correspond."
+        ],
+        "validation": {
+          "method": "test",
+          "test_id": "TEST-001"
+        }
+      },
+      {
+        "id": "REQ-F-002",
+        "source_ids": [
+          "M07"
+        ],
+        "description": "Documentation navigation works with keyboard, pointer and no JavaScript.",
+        "acceptance_criteria": [
+          "Search supports filtering, arrows, Enter, Escape, focus confinement and restoration without capturing editable fields or native shortcuts."
+        ],
+        "validation": {
+          "method": "test",
+          "test_id": "TEST-002"
+        }
+      },
+      {
+        "id": "REQ-F-003",
+        "source_ids": [
+          "M08"
+        ],
+        "description": "One authored Markdown source produces consistent HTML, Markdown and machine discovery.",
+        "acceptance_criteria": [
+          "All listed resources and internal links resolve over HTTP, Markdown bodies match their source, and schema/example digests validate."
+        ],
+        "validation": {
+          "method": "test",
+          "test_id": "TEST-003"
+        }
+      },
+      {
+        "id": "REQ-F-004",
+        "source_ids": [
+          "M09"
+        ],
+        "description": "The interface remains readable in both themes and at narrow widths or enlarged text.",
+        "acceptance_criteria": [
+          "All pages reflow at 320, 390, 768 and 1440 pixels; text scales to 200%; color tokens pass WCAG text contrast and reduced motion is respected."
+        ],
+        "validation": {
+          "method": "test",
+          "test_id": "TEST-004"
+        }
+      },
+      {
+        "id": "REQ-F-005",
+        "source_ids": [
+          "M10"
+        ],
+        "description": "Pinned build tooling checks review branches without deployment.",
+        "acceptance_criteria": [
+          "The Hugo checksum, Node version, exact development dependencies and full-SHA Actions are pinned; PR validation has read-only permissions and no deploy step."
+        ],
+        "validation": {
+          "method": "test",
+          "test_id": "TEST-005"
+        }
+      }
+    ]
+  }
+}

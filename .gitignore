@@ -23,6 +23,8 @@
 
 # Node (if used for tooling)
 node_modules/
+.tools/
+test-results/
 
 # Temporary files
 *.tmp

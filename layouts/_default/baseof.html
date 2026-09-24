@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
-<head>
-  {{- partial "head.html" . -}}
-</head>
+<html lang="{{ .Lang }}" data-theme="dark">
+<head>{{ partial "head.html" . }}</head>
 <body>
-  <a href="#main-content" class="skip-link">{{ i18n "skip_to_content" }}</a>
-  {{- partial "nav.html" . -}}
-
-  <main id="main-content" tabindex="-1">
-    {{- block "main" . }}{{- end }}
-  </main>
-
-  {{- partial "footer.html" . -}}
-
-  <script src="{{ "js/i18n.js" | relURL }}"></script>
-  <script src="{{ "js/main.js" | relURL }}"></script>
-</body>
-</html>
+<a class="skip-link" href="#main-content">{{ i18n "skip" }}</a>
+{{ partial "nav.html" . }}
+<div class="site-layout">
+<aside class="sidebar" aria-label="{{ i18n "navigation" }}">
+<p class="sidebar-title">MADD / {{ i18n "docs" }}</p>
+<nav>{{ $page := . }}{{ range (slice .Site.Home | append (.Site.RegularPages.ByWeight)) }}
+<a href="{{ .RelPermalink }}" {{ if eq $page.RelPermalink .RelPermalink }}aria-current="page"{{ end }}><span class="nav-index">{{ printf "%02d" .Weight }}</span>{{ .LinkTitle }}</a>
+{{ end }}</nav>
+<p class="sidebar-note">{{ i18n "sidebar_note" }}</p>
+<a class="source-link" href="https://github.com/madd-sh/madd">github / madd ↗</a>
+</aside>
+<main id="main-content" tabindex="-1">{{ block "main" . }}{{ partial "article.html" . }}{{ end }}</main>
+</div>
+{{ partial "footer.html" . }}
+{{ partial "commands.html" . }}
+<script src="{{ "js/i18n.js" | relURL }}" defer></script>
+<script src="{{ "js/main.js" | relURL }}" defer></script>
+</body></html>

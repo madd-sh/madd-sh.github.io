@@ -1,0 +1,15 @@
+# MADD — Multi-Agent Driven Development
+
+> Make intent verifiable. Humans, agents and existing CI can use the method. Optional adapters install agent workflows.
+
+Released CLI: 0.1.3. Contract validation and evidence verification: 0.2.0 candidate, not yet published.
+
+## Documentation
+{{ range .Sites }}{{ range (slice .Home | append .RegularPages.ByWeight) }}
+- [{{ .LinkTitle }} / {{ .Lang }}]({{ (.OutputFormats.Get "MD").Permalink }}): {{ .Description }}
+{{ end }}{{ end }}
+## Machine index
+- [Resource manifest](https://madd.sh/manifest.json): version, language, status and media types.
+- [Candidate schema](https://madd.sh/schemas/draft/0.2.0/contract.schema.json): draft, mutable until release.
+
+No authentication or JavaScript is needed to read these resources. This index is discovery metadata, not authorization or a certification.

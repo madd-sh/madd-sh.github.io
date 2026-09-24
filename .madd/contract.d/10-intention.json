@@ -1,0 +1,16 @@
+{
+  "intention": {
+    "context": "Make the MADD method readable, inspectable and accessible while distinguishing the released CLI from the candidate contract format.",
+    "objectives": [
+      {
+        "id": "OBJ-001",
+        "description": "A human or agent can find the method, inspect the same source and identify the evidence and version limits."
+      }
+    ],
+    "out_of_scope": [
+      "No site deployment, DNS change or CLI publication from this candidate branch.",
+      "No private contracts or CI transcripts enter public machine artifacts.",
+      "Manual screen-reader review and authenticated remote CI remain release gates."
+    ]
+  }
+}

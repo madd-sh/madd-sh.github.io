@@ -1,0 +1,15 @@
+{{ $example := (os.ReadFile "static/examples/contract-0.2.0.json" | transform.Unmarshal) }}
+<figure class="contract-window">
+<div class="window-heading"><span class="window-dots" aria-hidden="true">○ ○ ○</span><span>delivery.contract</span><span class="draft-label">{{ $example.meta.status }}</span></div>
+<div class="window-body">
+<p class="file-path">.madd/contract.d/</p>
+<dl class="terminal-lines">
+<div><dt>01 / requirement</dt><dd>{{ (index $example.functional.requirements 0).id }}</dd></div>
+<div><dt>02 / check</dt><dd>{{ (index $example.tasks.tests 0).id }}</dd></div>
+<div><dt>03 / binding</dt><dd>{{ (index $example.tasks.tests 0).binding }}</dd></div>
+<div><dt>04 / status</dt><dd>{{ (index $example.tasks.tests 0).status }}</dd></div>
+</dl>
+<p class="window-result">{{ i18n "evidence_next" }}</p>
+</div>
+<figcaption class="window-footer"><span>{{ i18n "illustrative" }} · 0.2.0</span><a href="{{ "examples/contract-0.2.0.json" | relURL }}">{{ i18n "inspect_json" }} ↗</a></figcaption>
+</figure>
