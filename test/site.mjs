@@ -31,7 +31,7 @@ const staticAllowlist = [
   'CNAME', 'robots.txt', 'favicon.svg', 'images/og-default.png', 'css/style.css',
   'js/i18n.js', 'js/main.js', 'contract.schema.json',
   'schemas/legacy-0.1.3/contract.schema.json', 'schemas/draft/0.2.0/contract.schema.json',
-  'examples/contract-0.2.0.json', 'vocab/madd.jsonld',
+  'examples/contract-0.2.0.json', 'vocab/index.html', 'vocab/madd.jsonld',
 ];
 
 async function get(url) {
@@ -91,6 +91,7 @@ async function resources() {
   const vocabulary = await (await get(`${origin}/vocab/madd.jsonld`)).json();
   assert.equal(vocabulary['@type'], 'schema:DefinedTermSet');
   assert.equal(vocabulary.hasDefinedTerm.length, 8);
+  assert.match(await (await get(`${origin}/vocab/`)).text(), /MADD vocabulary/);
   const example = await (await get(`${origin}/examples/contract-0.2.0.json`)).json();
   const ajv = new Ajv2020({ strict: false, allErrors: true });
   addFormats(ajv);
@@ -114,6 +115,8 @@ async function content(page, pages) {
     assert.equal(await page.locator('html').getAttribute('lang'), resource.language);
     assert.equal(await page.locator('h1').count(), 1);
     assert.equal(await page.locator('link[rel=canonical]').getAttribute('href'), resource.url);
+    assert.equal(await page.locator('meta[property="og:image:width"]').getAttribute('content'), '1200');
+    assert.equal(await page.locator('meta[property="og:image:height"]').getAttribute('content'), '630');
     const otherLanguage = resource.language === 'en' ? 'fr' : 'en';
     const alternate = await page.locator(`link[hreflang=${otherLanguage}]`).getAttribute('href');
     assert.equal(await page.locator('.language-link').getAttribute('href'), new URL(alternate).pathname);
