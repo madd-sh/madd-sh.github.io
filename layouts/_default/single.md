@@ -1,19 +1,12 @@
 # {{ .Title }}
 
-{{ with .Description }}{{ . }}{{ end }}
+{{ .Description }}
+
+{{ .Params.status }}
 
 {{ .RawContent }}
 
 ---
-
-{{ if .Translations }}
-## Other Languages
-
-{{ range .Translations }}
-- [{{ .Language.LanguageName }}]({{ .Permalink | replaceRE "index\\.html$" "index.md" }})
+[HTML]({{ .Permalink }}) · [Source](https://github.com/madd-sh/madd-sh.github.io/blob/{{ .Site.Params.sourceRevision }}/content/{{ .Lang }}/{{ .File.LogicalName }})
+{{ range .Translations }}[{{ .Language.LanguageName }}]({{ (.OutputFormats.Get "MD").Permalink }})
 {{ end }}
-{{ end }}
-
----
-*MADD — Multi-Agent Driven Development*
-*[View HTML version]({{ .Permalink }})*

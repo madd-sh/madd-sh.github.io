@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "format_version": "0.2.0",
+    "name": "MADD relaunch — site pilot",
+    "version": "0.2.0",
+    "status": "draft",
+    "owner": "MADD maintainer",
+    "sources": [
+      {
+        "id": "site",
+        "repository": "https://github.com/madd-sh/madd-sh.github.io",
+        "revision": "b1c4d9bb1011e2cb2f444b797417e79bffe6cd8a"
+      }
+    ]
+  }
+}

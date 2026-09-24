@@ -1,0 +1,123 @@
+{
+  "tasks": {
+    "items": [
+      {
+        "id": "TASK-001",
+        "source_ids": [
+          "M06"
+        ],
+        "title": "Published and candidate capabilities stay distinct in EN and FR.",
+        "status": "in_progress",
+        "requirements": [
+          "REQ-F-001"
+        ],
+        "repository": "site",
+        "owner": "MADD maintainer",
+        "risk": "medium"
+      },
+      {
+        "id": "TASK-002",
+        "source_ids": [
+          "M07"
+        ],
+        "title": "Documentation navigation works with keyboard, pointer and no JavaScript.",
+        "status": "in_progress",
+        "requirements": [
+          "REQ-F-002"
+        ],
+        "repository": "site",
+        "owner": "MADD maintainer",
+        "risk": "medium"
+      },
+      {
+        "id": "TASK-003",
+        "source_ids": [
+          "M08"
+        ],
+        "title": "One authored Markdown source produces consistent HTML, Markdown and machine discovery.",
+        "status": "in_progress",
+        "requirements": [
+          "REQ-F-003"
+        ],
+        "repository": "site",
+        "owner": "MADD maintainer",
+        "risk": "medium"
+      },
+      {
+        "id": "TASK-004",
+        "source_ids": [
+          "M09"
+        ],
+        "title": "The interface remains readable in both themes and at narrow widths or enlarged text.",
+        "status": "in_progress",
+        "requirements": [
+          "REQ-F-004"
+        ],
+        "repository": "site",
+        "owner": "MADD maintainer",
+        "risk": "medium"
+      },
+      {
+        "id": "TASK-005",
+        "source_ids": [
+          "M10"
+        ],
+        "title": "Pinned build tooling checks review branches without deployment.",
+        "status": "in_progress",
+        "requirements": [
+          "REQ-F-005"
+        ],
+        "repository": "site",
+        "owner": "MADD maintainer",
+        "risk": "medium"
+      }
+    ],
+    "tests": [
+      {
+        "id": "TEST-001",
+        "type": "e2e",
+        "requirement": "REQ-F-001",
+        "description": "Every page identifies released 0.1.3 and candidate 0.2.0; translated routes correspond.",
+        "binding": "bound",
+        "ref": "test/site.mjs",
+        "status": "pending"
+      },
+      {
+        "id": "TEST-002",
+        "type": "e2e",
+        "requirement": "REQ-F-002",
+        "description": "Search supports filtering, arrows, Enter, Escape, focus confinement and restoration without capturing editable fields or native shortcuts.",
+        "binding": "bound",
+        "ref": "test/site.mjs",
+        "status": "pending"
+      },
+      {
+        "id": "TEST-003",
+        "type": "e2e",
+        "requirement": "REQ-F-003",
+        "description": "All listed resources and internal links resolve over HTTP, Markdown bodies match their source, and schema/example digests validate.",
+        "binding": "bound",
+        "ref": "test/site.mjs",
+        "status": "pending"
+      },
+      {
+        "id": "TEST-004",
+        "type": "e2e",
+        "requirement": "REQ-F-004",
+        "description": "All pages reflow at 320, 390, 768 and 1440 pixels; text scales to 200%; color tokens pass WCAG text contrast and reduced motion is respected.",
+        "binding": "bound",
+        "ref": "test/site.mjs",
+        "status": "pending"
+      },
+      {
+        "id": "TEST-005",
+        "type": "build",
+        "requirement": "REQ-F-005",
+        "description": "The Hugo checksum, Node version, exact development dependencies and full-SHA Actions are pinned; PR validation has read-only permissions and no deploy step.",
+        "binding": "bound",
+        "ref": "test/site.mjs",
+        "status": "pending"
+      }
+    ]
+  }
+}

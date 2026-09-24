@@ -1,37 +1,77 @@
-# MADD — Multi-Agent Driven Development
+# 🤪 MADD — make intent verifiable
 
-La méthodologie qui garantit **zéro dérive** entre l'intention et l'implémentation.
+The EN/FR Hugo source for [madd.sh](https://madd.sh). One authored Markdown page
+produces HTML and Markdown; generated indexes expose the public resources.
+The published CLI is **0.1.3**. Contract validation and evidence verification
+are **0.2.0 candidate** capabilities, available from the candidate CLI branch.
+This branch does not constitute a published site or CLI release.
 
-## Site Web
+## Local checks
 
-Ce repository contient le site web officiel de MADD : https://madd.sh/
+Use Node **22.23.3** (`.node-version`) and Hugo **0.155.3** (`.hugo-version`).
+The Linux x86_64 installer verifies the release archive against its reviewed
+SHA-256 before installing to the ignored `.tools/` directory.
 
-## Qu'est-ce que MADD ?
+```sh
+npm ci --ignore-scripts
+make install-hugo
+npx --no-install playwright install chromium
+make check HUGO=.tools/hugo
+make preview HUGO=.tools/hugo
+```
 
-MADD est une méthodologie de développement conçue pour l'ère de l'IA. Elle repose sur :
+`make test` tests the existing `public/` build over a temporary loopback HTTP
+server. `make check` builds it first. The default local browser is Chromium;
+the full release check requires all three engines:
 
-- **6 agents spécialisés** : Conductor, Architect, Maker, CI, Breaker, Witness
-- **6 principes fondamentaux** : intention, contrats, validation indépendante, rétro-spec, fondations, skills
-- **Spécialisation par domaine** : paires Maker/Breaker spécialisées (database, API, frontend, security, infrastructure)
-- **Zéro dérive** : garantie d'alignement entre ce qui est demandé et ce qui est livré
+```sh
+npx --no-install playwright install --with-deps chromium firefox webkit
+BROWSERS=chromium,firefox,webkit make check HUGO=.tools/hugo
+```
 
-## Les 6 Principes
+The suite checks keyboard/pointer search, focus, browser history, native keys,
+editable fields, JavaScript-free navigation, corresponding EN/FR routes,
+all internal links and fragments, 320/390/768/1440px layouts, actual 200% text
+scaling, reduced motion, theme persistence and WCAG text color contrast.
+It also checks HTML/Markdown parity, schemas, examples, manifests, hashes and
+the pinned workflow policy. Screenshots go to ignored `test-results/`.
+Browser automation does not replace manual screen-reader or touch-device review.
+`make social` regenerates the 1200×630 share card from the home title and its
+HTML/CSS source; it uses the already installed Playwright Chromium.
 
-1. L'intention est un artefact de première classe
-2. Le contrat est exécutable
-3. Aucun agent ne valide son propre travail
-4. La rétro-spécification est la mémoire du système
-5. Les fondations précèdent les features
-6. Les skills sont des contrats de connaissance
+## Public inputs and versions
 
-## Contribuer
+Author public prose only in `content/en/` and `content/fr/`; UI labels live in
+`i18n/`. Shared layouts render the article body with `.Content` and `.RawContent`.
+The resource index uses those pages plus the explicit `data/resources.json`
+allowlist. The test also names every permitted `static/` file. There is no
+recursive import from working contracts, other repositories or CI transcripts.
+The pilot `.madd/contract.d/` stays outside Hugo's published inputs.
 
-MADD est open source. Contributions bienvenues :
+Preserve `static/contract.schema.json` and `schemas/legacy-0.1.3/` for legacy
+readers. Candidate schemas live under `schemas/draft/0.2.0/`; update the matching
+resource digest whenever their bytes change. The synthetic example deliberately
+contains a planned, unexecuted check. A status never substitutes for evidence.
 
-- Issues : signaler ambiguïtés, proposer clarifications
-- Pull Requests : améliorer les principes, skills, documentation
-- Discussions : partager retours d'expérience
+## Review, publish and rollback
 
-## Licence
+Pull-request CI has read-only permissions and only builds/tests. The existing
+Pages workflow retains `main`, the `github-pages` environment and `madd.sh`
+(`static/CNAME`); even a manual run is restricted to `main`. It runs the three
+browser checks before uploading the deployment artifact. Hugo and Node versions,
+development dependencies and all Action commit IDs are pinned.
 
-MIT
+Before publishing, obtain an independent diff review, a successful remote CI
+run and a recorded manual screen-reader/touch review. Verify the candidate CLI
+branch and source links exist. CI binds source links to its exact commit;
+local previews use the named candidate branch. Keep released/candidate wording
+until the CLI release actually exists. No deployment is needed for review.
+
+Retain the previous successful Pages commit/artifact. If navigation or public
+resources regress, revert the relaunch commit through review and deploy the
+previous known-good revision through the same Pages workflow. Do not change DNS.
+Existing EN/FR `.html`/`.md` routes, landing/method/skills anchors and `/manifesto.html`
+are covered by the regression check.
+
+Contributions: [issues](https://github.com/madd-sh/madd-sh.github.io/issues) and
+[method discussions](https://github.com/madd-sh/madd/discussions). License: MIT.
