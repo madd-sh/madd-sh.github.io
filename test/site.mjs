@@ -28,10 +28,10 @@ const requestedBrowsers = (process.env.BROWSERS || 'chromium').split(',');
 const browsers = { chromium, firefox, webkit };
 const sourceResources = JSON.parse(await readFile('data/resources.json', 'utf8'));
 const staticAllowlist = [
-  'CNAME', 'robots.txt', 'favicon.svg', 'images/og-default-v2.png', 'css/style.css',
+  'CNAME', 'robots.txt', 'favicon.svg', 'css/style.css',
   'js/i18n.js', 'js/main.js', 'contract.schema.json',
   'schemas/legacy-0.1.3/contract.schema.json', 'schemas/draft/0.2.0/contract.schema.json',
-  'examples/contract-0.2.0.json', 'vocab/index.html', 'vocab/madd.jsonld',
+  'examples/contract-0.2.0.json', 'vocab/index.html', 'vocab/madd.jsonld', 'images/og-default-v3.png',
 ];
 
 async function get(url) {
