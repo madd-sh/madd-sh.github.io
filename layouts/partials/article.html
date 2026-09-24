@@ -1,5 +1,7 @@
 <article class="page-section {{ if .IsHome }}hero{{ end }}">
-<p class="eyebrow">{{ .Params.eyebrow }}</p>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="{{ .Site.Home.RelPermalink }}">MADD</a><span aria-hidden="true">/</span><span>{{ i18n "docs" }}</span><span aria-hidden="true">/</span><span aria-current="page">{{ .LinkTitle | default .Title }}</span>
+</nav>
 <div class="{{ if .IsHome }}hero-grid{{ end }}">
 <header><h1>{{ .Title }}</h1><p class="hero-description">{{ .Description }}</p>
 {{ if .IsHome }}<div class="hero-actions"><a class="button primary" href="{{ "contract.html" | relLangURL }}">{{ i18n "explore_contract" }} <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ "concepts.html" | relLangURL }}">{{ i18n "learn_method" }} <span aria-hidden="true">→</span></a></div>{{ end }}</header>
