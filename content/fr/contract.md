@@ -4,12 +4,12 @@ linkTitle: "Contrat"
 description: "Des fragments JSON, des exigences stables et un registre unique de contrôles. Distinguer validité, raccordement aux tests et preuves de livraison."
 weight: 2
 eyebrow: "INTENTION / CONTRAT / PREUVES"
-status: "Méthode · 0.1.3 publiée / 0.2.0 candidate"
+status: "Méthode · 0.1.3 publiée / 0.2.0-rc.1 publiée sous next"
 ---
 
 ## Deux versions, une compatibilité explicite
 
-La CLI publiée **0.1.3** installe le contrat historique et des adaptateurs agents optionnels. Son schéma permissif ne certifie ni complétude ni livraison. Le **format candidat 0.2.0** est optionnel et ne réécrit pas les anciens contrats.
+La CLI publiée **0.1.3** installe le contrat historique et des adaptateurs agents optionnels. Son schéma permissif ne certifie ni complétude ni livraison. Le **format candidat 0.2.0-rc.1** est optionnel et ne réécrit pas les anciens contrats.
 
 [Schéma historique](/schemas/legacy-0.1.3/contract.schema.json) · [Schéma candidat](/schemas/draft/0.2.0/contract.schema.json) · [Exemple synthétique](/examples/contract-0.2.0.json)
 
@@ -37,15 +37,12 @@ Les décisions techniques, les opérations, les fractions d’audit et la rétro
 
 ## Essayer la candidate
 
-Ces commandes nécessitent la **branche candidate**, pas le paquet publié 0.1.3 :
+Ces commandes utilisent la **candidate 0.2.0-rc.1** publiée sous le tag npm `next` :
 
 ```sh
-git clone --branch feat/madd-relaunch-contracts https://github.com/madd-sh/madd.git
-cd madd
-npm ci --ignore-scripts
-mkdir /tmp/my-madd-change
-node bin/madd.js init /tmp/my-madd-change --contract-only
-node bin/madd.js validate /tmp/my-madd-change --json
+mkdir -p /tmp/my-madd-change
+npx --yes @madd-sh/madd@next init --contract-only /tmp/my-madd-change
+npx --yes @madd-sh/madd@next validate /tmp/my-madd-change --json
 ```
 
 Remplacez l’exigence, la tâche et le contrôle initiaux. Un contrôle planifié reste volontairement sans implémentation. Positionnez `binding` à `bound` et `ref` sur un fichier relatif existant ; `--require-bound` impose ce raccordement. Déclarez une fraction avant d’utiliser `--fraction FRAC-001`.

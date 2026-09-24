@@ -4,7 +4,7 @@ linkTitle: "Start"
 description: "A clear contract. A small change. Evidence you can inspect. MADD helps humans and agents agree on what should happen, then check what actually shipped."
 weight: 0
 eyebrow: "INTENT / CONTRACT / EVIDENCE"
-status: "Method · 0.1.3 released / 0.2.0 candidate"
+status: "Method · 0.1.3 released / 0.2.0-rc.1 published under next"
 ---
 
 ## An experiment with a receipt
@@ -44,7 +44,7 @@ The published **0.1.3** CLI installs optional agent workflows. Its `doctor` comm
 npx @madd-sh/madd@0.1.3 init
 ```
 
-The **0.2.0 candidate** adds contract-only initialization, structural validation and evidence verification. It is being exercised on this relaunch and is not yet an npm release. [Use the candidate from source](contract.html#try-the-candidate).
+The **0.2.0-rc.1 candidate** adds contract-only initialization, structural validation and evidence verification. Try it from npm with `npx @madd-sh/madd@next`. [Read the candidate workflow](contract.html#try-the-candidate).
 
 ## Keep your tools {#domains}
 

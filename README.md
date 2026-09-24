@@ -2,9 +2,9 @@
 
 The EN/FR Hugo source for [madd.sh](https://madd.sh). One authored Markdown page
 produces HTML and Markdown; generated indexes expose the public resources.
-The published CLI is **0.1.3**. Contract validation and evidence verification
-are **0.2.0 candidate** capabilities, available from the candidate CLI branch.
-This branch does not constitute a published site or CLI release.
+The stable CLI is **0.1.3**. Contract validation and evidence verification are
+available in **0.2.0-rc.1** under npm's `next` tag. This site is deployed from
+`main`; the RC is explicitly not a stable release.
 
 ## Local checks
 
@@ -61,11 +61,10 @@ Pages workflow retains `main`, the `github-pages` environment and `madd.sh`
 browser checks before uploading the deployment artifact. Hugo and Node versions,
 development dependencies and all Action commit IDs are pinned.
 
-Before publishing, obtain an independent diff review, a successful remote CI
-run and a recorded manual screen-reader/touch review. Verify the candidate CLI
-branch and source links exist. CI binds source links to its exact commit;
-local previews use the named candidate branch. Keep released/candidate wording
-until the CLI release actually exists. No deployment is needed for review.
+Before a stable release, obtain an independent diff review, a successful remote
+CI run and a recorded manual screen-reader/touch review. The RC is available
+with `npx --yes @madd-sh/madd@next`; its source and provenance are linked from
+the CLI release workflow. Keep RC/stable wording accurate.
 
 Retain the previous successful Pages commit/artifact. If navigation or public
 resources regress, revert the relaunch commit through review and deploy the

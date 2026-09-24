@@ -4,12 +4,12 @@ linkTitle: "Contract"
 description: "JSON fragments, stable requirements and one check registry. Separate what is valid, what is bound and what has delivery evidence."
 weight: 2
 eyebrow: "INTENT / CONTRACT / EVIDENCE"
-status: "Method · 0.1.3 released / 0.2.0 candidate"
+status: "Method · 0.1.3 released / 0.2.0-rc.1 published under next"
 ---
 
 ## Two versions, explicit compatibility
 
-The released CLI **0.1.3** installs the legacy contract and optional agent adapters. Its permissive schema does not certify completeness or delivery. The new **0.2.0 format candidate** is opt-in; it does not silently rewrite legacy contracts.
+The released CLI **0.1.3** installs the legacy contract and optional agent adapters. Its permissive schema does not certify completeness or delivery. The new **0.2.0-rc.1 format candidate** is opt-in; it does not silently rewrite legacy contracts.
 
 [Legacy schema](schemas/legacy-0.1.3/contract.schema.json) · [Candidate schema](schemas/draft/0.2.0/contract.schema.json) · [Synthetic candidate example](examples/contract-0.2.0.json)
 
@@ -37,15 +37,12 @@ Editing `status` to `done`, `passing` or `verified` never manufactures evidence.
 
 ## Try the candidate
 
-These commands require a checkout of the **candidate branch**, not the published 0.1.3 package:
+These commands use the published **0.2.0-rc.1 candidate** under npm's `next` tag:
 
 ```sh
-git clone --branch feat/madd-relaunch-contracts https://github.com/madd-sh/madd.git
-cd madd
-npm ci --ignore-scripts
-mkdir /tmp/my-madd-change
-node bin/madd.js init /tmp/my-madd-change --contract-only
-node bin/madd.js validate /tmp/my-madd-change --json
+mkdir -p /tmp/my-madd-change
+npx --yes @madd-sh/madd@next init --contract-only /tmp/my-madd-change
+npx --yes @madd-sh/madd@next validate /tmp/my-madd-change --json
 ```
 
 Replace the starter requirement, task and check with your own. A planned check is deliberately unbound. Set `binding` to `bound` and `ref` to a relative, existing check file; use `--require-bound` to make that a gate. Add a fraction before using `--fraction FRAC-001`.

@@ -4,7 +4,7 @@ linkTitle: "Démarrer"
 description: "Un contrat clair. Un petit changement. Des preuves consultables. MADD aide humains et agents à définir le résultat attendu, puis à vérifier ce qui a été livré."
 weight: 0
 eyebrow: "INTENTION / CONTRAT / PREUVES"
-status: "Méthode · 0.1.3 publiée / 0.2.0 candidate"
+status: "Méthode · 0.1.3 publiée / 0.2.0-rc.1 publiée sous next"
 ---
 
 ## Une expérience avec ses preuves
@@ -44,7 +44,7 @@ La CLI publiée **0.1.3** installe des workflows agents optionnels. Sa commande 
 npx @madd-sh/madd@0.1.3 init
 ```
 
-La **candidate 0.2.0** ajoute l’initialisation du contrat seul, sa validation et la vérification des preuves. Elle est éprouvée sur cette refonte et n’est pas encore publiée sur npm. [Essayer la candidate depuis les sources](contract.html#essayer-la-candidate).
+La **candidate 0.2.0-rc.1** ajoute l’initialisation du contrat seul, sa validation et la vérification des preuves. Elle est publiée sur npm sous le tag `next` : `npx @madd-sh/madd@next`. [Lire le parcours candidat](contract.html#essayer-la-candidate).
 
 ## Garder ses outils {#domains}
 
