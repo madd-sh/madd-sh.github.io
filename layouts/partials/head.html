@@ -13,3 +13,4 @@
 {{ range where .AllTranslations "Lang" "en" }}<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">{{ end }}
 {{ with .OutputFormats.Get "MD" }}<link rel="alternate" type="text/markdown" href="{{ .Permalink }}">{{ end }}
 <link rel="alternate" type="application/json" href="{{ "manifest.json" | absURL }}">
+{{ partial "structured-data.html" . }}

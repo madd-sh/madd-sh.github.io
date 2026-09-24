@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "madd": "https://madd.sh/vocab/"
+  },
+  "@id": "https://madd.sh/vocab/",
+  "@type": "schema:DefinedTermSet",
+  "name": "MADD vocabulary",
+  "description": "Terms used by Multi-Agent Driven Development.",
+  "hasDefinedTerm": [
+    { "@id": "madd:Intention", "@type": "schema:DefinedTerm", "name": "Intention", "description": "The observable outcome and limits a change is meant to achieve." },
+    { "@id": "madd:Contract", "@type": "schema:DefinedTerm", "name": "Contract", "description": "A versioned statement of requirements, checks and boundaries." },
+    { "@id": "madd:Fraction", "@type": "schema:DefinedTerm", "name": "Fraction", "description": "A bounded, reviewable delivery scope." },
+    { "@id": "madd:Requirement", "@type": "schema:DefinedTerm", "name": "Requirement", "description": "An observable claim that a contract expects the implementation to satisfy." },
+    { "@id": "madd:Check", "@type": "schema:DefinedTerm", "name": "Check", "description": "An executable or inspectable procedure used to assess a requirement." },
+    { "@id": "madd:Evidence", "@type": "schema:DefinedTerm", "name": "Evidence", "description": "An observed result tied to a revision, scope and check." },
+    { "@id": "madd:Witness", "@type": "schema:DefinedTerm", "name": "Witness", "description": "The independent role that records what was actually delivered." },
+    { "@id": "madd:Breaker", "@type": "schema:DefinedTerm", "name": "Breaker", "description": "The independent role that challenges implementation against its contract." }
+  ]
+}

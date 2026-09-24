@@ -8,7 +8,7 @@ import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 
 const root = resolve('public');
-const mime = { '.html': 'text/html', '.md': 'text/markdown', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain', '.xml': 'application/xml' };
+const mime = { '.html': 'text/html', '.md': 'text/markdown', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.jsonld': 'application/ld+json', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain', '.xml': 'application/xml' };
 const server = createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
@@ -31,7 +31,7 @@ const staticAllowlist = [
   'CNAME', 'robots.txt', 'favicon.svg', 'images/og-default.png', 'css/style.css',
   'js/i18n.js', 'js/main.js', 'contract.schema.json',
   'schemas/legacy-0.1.3/contract.schema.json', 'schemas/draft/0.2.0/contract.schema.json',
-  'examples/contract-0.2.0.json',
+  'examples/contract-0.2.0.json', 'vocab/madd.jsonld',
 ];
 
 async function get(url) {
@@ -88,6 +88,9 @@ async function resources() {
     }
   }
   const schema = await (await get(`${origin}/schemas/draft/0.2.0/contract.schema.json`)).json();
+  const vocabulary = await (await get(`${origin}/vocab/madd.jsonld`)).json();
+  assert.equal(vocabulary['@type'], 'schema:DefinedTermSet');
+  assert.equal(vocabulary.hasDefinedTerm.length, 8);
   const example = await (await get(`${origin}/examples/contract-0.2.0.json`)).json();
   const ajv = new Ajv2020({ strict: false, allErrors: true });
   addFormats(ajv);

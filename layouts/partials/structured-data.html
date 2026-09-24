@@ -1,0 +1,13 @@
+{{- $org := dict "@id" "https://madd.sh/#organization" "@type" "Organization" "name" "MADD Community" "url" "https://madd.sh/" "sameAs" (slice "https://github.com/madd-sh") -}}
+{{- $website := dict "@id" "https://madd.sh/#website" "@type" "WebSite" "name" "MADD" "url" "https://madd.sh/" "publisher" (dict "@id" "https://madd.sh/#organization") "inLanguage" (slice "en" "fr") -}}
+{{- $pageType := "TechArticle" -}}
+{{- if .IsHome }}{{- $pageType = "WebPage" -}}{{- end -}}
+{{- $page := dict "@id" .Permalink "@type" $pageType "url" .Permalink "name" .Title "headline" .Title "description" .Description "inLanguage" .Lang "isPartOf" (dict "@id" "https://madd.sh/#website") "author" (dict "@id" "https://madd.sh/#organization") "publisher" (dict "@id" "https://madd.sh/#organization") "about" (dict "@id" "https://madd.sh/vocab/" ) -}}
+{{- $items := slice (dict "@type" "ListItem" "position" 1 "name" "MADD" "item" .Site.Home.Permalink) (dict "@type" "ListItem" "position" 2 "name" (i18n "docs") ) (dict "@type" "ListItem" "position" 3 "name" (.LinkTitle | default .Title) "item" .Permalink) -}}
+{{- $breadcrumb := dict "@id" (printf "%s#breadcrumb" .Permalink) "@type" "BreadcrumbList" "itemListElement" $items -}}
+{{- $graph := slice $org $website $page $breadcrumb -}}
+{{- if eq .File.LogicalName "concepts.md" -}}
+  {{- $page = merge $page (dict "mainEntity" (dict "@id" "https://madd.sh/vocab/")) -}}
+  {{- $graph = slice $org $website $page $breadcrumb (dict "@id" "https://madd.sh/vocab/" "@type" "DefinedTermSet" "name" "MADD vocabulary" "description" "Terms used by Multi-Agent Driven Development." "url" "https://madd.sh/vocab/madd.jsonld") -}}
+{{- end -}}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>
