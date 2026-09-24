@@ -37,7 +37,9 @@ kbd { font: 0.6875rem var(--mono); padding: 3px 5px; border: 1px solid var(--lin
 .source-link { margin: 20px 10px; min-height: 44px; display: inline-flex; align-items: center; color: var(--muted); font-size: 0.75rem; }
 main { min-width: 0; }
 .page-section { padding: 52px clamp(24px, 6vw, 95px) 80px; max-width: 1160px; }
-.eyebrow { font: 0.6875rem/1.8 var(--mono); letter-spacing: 1.5px; color: var(--accent); margin: 0 0 32px; }
+.breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; font: 0.6875rem/1.8 var(--mono); letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin: 0 0 32px; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover, .breadcrumb [aria-current] { color: var(--accent); }
 h1 { font-size: clamp(2.375rem, 5.1vw, 4.75rem); font-weight: 650; line-height: 1.06; letter-spacing: -.05em; margin: 0 0 28px; max-width: 950px; text-wrap: balance; overflow-wrap: anywhere; hyphens: auto; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 42px; align-items: center; padding: 14px 0 36px; }
 .hero h1 { font-size: clamp(3rem, 5vw, 4.75rem); max-width: 790px; }
@@ -111,7 +113,7 @@ dialog::backdrop { background: #000a; }
   .sidebar nav a { font-size: 0.8125rem; padding: 6px; gap: 8px; }
   .sidebar-title, .sidebar-note, .source-link { display: none; }
   .page-section { padding: 38px 24px 52px; }
-  .eyebrow { font-size: 0.625rem; margin-bottom: 24px; }
+  .breadcrumb { font-size: 0.625rem; margin-bottom: 24px; }
   h1 { font-size: 2.625rem; }
   .hero-description { font-size: 1.125rem; }
   .hero-grid { gap: 32px; padding-bottom: 20px; }
