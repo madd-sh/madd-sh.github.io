@@ -7,9 +7,9 @@ eyebrow: "INTENT / CONTRACT / EVIDENCE"
 status: "Method · 0.1.3 released / 0.2.0-rc.1 published under next"
 ---
 
-## An experiment with a receipt
+## A change with a receipt
 
-> 🤪 Think boldly. Ship something you can explain.
+> Think boldly. Ship something you can explain.
 
 MADD means **Multi-Agent Driven Development**. Start with one developer, one independent reviewer and your existing CI. Add agent roles when they help the work.
 
@@ -24,11 +24,11 @@ review       → an independent challenge
 retro        → what shipped, and what did not
 ```
 
-## Less guessing, more shared intent {#problem}
+## Start with the change, not the prompt {#problem}
 
-A long prompt is a poor handover. Put the outcome, limits and acceptance criteria in versioned files. Developers, reviewers and agents can read the same specification. CI checks the parts that can be automated; people own the decisions and unresolved risks.
+A long prompt is a poor handover. Put one observable outcome, its limits and its acceptance check in versioned files. The developer implements it, CI records what ran, and an independent reviewer checks whether the result matches the promise.
 
-## Six responsibilities, as many people as you need {#agents}
+## One change, six handoffs {#agents}
 
 Architect clarifies intent. Maker implements. CI executes checks. Breaker challenges the change independently. Witness records observed behavior. Conductor keeps the scope and handoffs clear. These are responsibilities, not a requirement to run six AI processes.
 

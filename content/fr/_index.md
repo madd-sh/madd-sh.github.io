@@ -7,9 +7,9 @@ eyebrow: "INTENTION / CONTRAT / PREUVES"
 status: "Méthode · 0.1.3 publiée / 0.2.0-rc.1 publiée sous next"
 ---
 
-## Une expérience avec ses preuves
+## Un changement avec ses preuves
 
-> 🤪 Oser les idées. Livrer quelque chose que l’on peut expliquer.
+> Oser les idées. Livrer quelque chose que l’on peut expliquer.
 
 MADD signifie **Multi-Agent Driven Development**. Commencez avec un développeur, un relecteur indépendant et votre CI existante. Ajoutez des rôles agents lorsque le travail en bénéficie.
 
@@ -24,11 +24,11 @@ revue        → une analyse indépendante
 rétro        → ce qui est livré et ce qui ne l’est pas
 ```
 
-## Une intention partagée {#problem}
+## Commencer par le changement, pas par le prompt {#problem}
 
-Un long prompt transmet mal un projet. Conservez le résultat attendu, les limites et les critères d’acceptation dans des fichiers versionnés. Développeurs, relecteurs et agents lisent la même spécification. La CI vérifie ce qui est automatisable ; les personnes portent les décisions et les risques non résolus.
+Un long prompt transmet mal un projet. Conservez un résultat observable, ses limites et son critère d’acceptation dans des fichiers versionnés. Le développeur l’implémente, la CI garde la trace de l’exécution et un relecteur indépendant vérifie que le résultat tient la promesse.
 
-## Six responsabilités, une équipe adaptée {#agents}
+## Un changement, six relais {#agents}
 
 Architect précise l’intention. Maker implémente. CI exécute les contrôles. Breaker examine le changement indépendamment. Witness décrit le résultat observé. Conductor organise le périmètre et les passages de relais. Ces responsabilités n’imposent pas six processus IA.
 
