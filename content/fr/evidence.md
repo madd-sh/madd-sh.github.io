@@ -24,7 +24,7 @@ Le pipeline protégé et les mainteneurs portent la politique, la liste des aute
 
 ## Ce que cette refonte peut démontrer
 
-La refonte éprouve validation des contrats, cas de sécurité négatifs, construction du site et contrôles navigateur. Les résultats candidats sont consignés dans les sources avec commandes et limites. Ils ne sont présentés ni comme une version publiée ni comme des preuves de production avant ces étapes.
+La refonte éprouve validation des contrats, cas de sécurité négatifs, construction du site et contrôles navigateur. Les résultats candidats sont consignés dans les sources avec commandes et limites. La RC est publiée sous le tag npm `next` ; ces résultats locaux ne constituent toujours pas des preuves authentifiées de livraison en production.
 
 ## Aucune mesure inventée
 

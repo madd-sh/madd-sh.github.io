@@ -24,7 +24,7 @@ The protected pipeline and maintainers are responsible for the policy, authors, 
 
 ## What this relaunch can demonstrate
 
-The relaunch exercises contract validation, negative security cases, site builds and browser checks. Candidate results are recorded in the source repository with exact commands and limitations. They are not advertised as a published release or authenticated production evidence before those steps happen.
+The relaunch exercises contract validation, negative security cases, site builds and browser checks. Candidate results are recorded in the source repository with exact commands and limitations. The RC is published under npm's `next` tag; these local results still do not constitute authenticated production delivery evidence.
 
 ## No invented benchmarks
 
