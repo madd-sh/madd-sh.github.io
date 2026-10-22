@@ -4,7 +4,7 @@ linkTitle: "Démarrer"
 description: "Un contrat clair. Un petit changement. Des preuves consultables. MADD aide humains et agents à définir le résultat attendu, puis à vérifier ce qui a été livré."
 weight: 0
 eyebrow: "INTENTION / CONTRAT / PREUVES"
-status: "Méthode · 0.1.3 publiée / 0.2.0-rc.1 publiée sous next"
+status: "Méthode · CLI 0.2.0 / format de contrat 0.2.0 stable"
 ---
 
 ## Un changement avec ses preuves
@@ -38,13 +38,13 @@ Une fraction est un petit périmètre de livraison avec des exigences et des con
 
 ## Commencer avec l’existant {#quickstart}
 
-La CLI publiée **0.1.3** installe des workflows agents optionnels. Sa commande `doctor` vérifie l’installation.
+La CLI stable **0.2.0** installe des workflows agents optionnels. Sa commande `doctor` vérifie l’installation.
 
 ```sh
-npx @madd-sh/madd@0.1.3 init
+npx @madd-sh/madd@0.2.0 init
 ```
 
-La **candidate 0.2.0-rc.1** ajoute l’initialisation du contrat seul, sa validation et la vérification des preuves. Elle est publiée sur npm sous le tag `next` : `npx @madd-sh/madd@next`. [Lire le parcours candidat](contract.html#essayer-la-candidate).
+La **CLI 0.2.0** propose aussi l’initialisation du contrat seul, sa validation et la vérification des preuves. Utilisez `npx @madd-sh/madd@0.2.0` pour figer cette version. [Commencer par un contrat](contract.html#commencer-par-un-contrat).
 
 ## Garder ses outils {#domains}
 

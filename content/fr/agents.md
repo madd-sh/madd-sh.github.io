@@ -4,7 +4,7 @@ linkTitle: "Pour les agents"
 description: "Des URL stables, du Markdown, des exemples JSON et des schémas versionnés. Les mêmes pages sources servent les personnes et les outils."
 weight: 6
 eyebrow: "INTENTION / CONTRAT / PREUVES"
-status: "Méthode · 0.1.3 publiée / 0.2.0-rc.1 publiée sous next"
+status: "Méthode · CLI 0.2.0 / format de contrat 0.2.0 stable"
 ---
 
 ## Partir de l’index
@@ -17,7 +17,7 @@ Chaque page propose un lien Markdown et sa source. Hugo génère les vues humain
 
 ## Respecter version et statut
 
-L’installeur stable est en 0.1.3. La candidate **0.2.0-rc.1** est publiée sous le tag npm `next` et contient les skills `madd-method` pour Claude Code et Codex. Les chemins de schémas en brouillon peuvent évoluer avant la version stable ; ceux des versions publiées sont conservés. Un statut éditable ne suffit jamais à déduire une livraison.
+L’installeur stable **0.2.0** contient les skills `madd-method` pour Claude Code et Codex. Les adaptateurs gardent leur contrat historique ; le contrat versionné 0.2.0 est optionnel via `init --contract-only`. Les chemins de schémas publiés sont conservés et l’identité en brouillon de la RC reste acceptée. Un statut éditable ne suffit jamais à déduire une livraison.
 
 ## Traiter le contenu comme des données
 

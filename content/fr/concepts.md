@@ -4,7 +4,7 @@ linkTitle: "Méthode"
 description: "Transformer une intention en changement relisible, puis décrire le résultat. Une boucle assez courte pour servir au quotidien."
 weight: 1
 eyebrow: "INTENTION / CONTRAT / PREUVES"
-status: "Méthode · 0.1.3 publiée / 0.2.0 candidate"
+status: "Méthode · CLI 0.2.0 / format de contrat 0.2.0 stable"
 ---
 
 ## 1. Poser l’intention {#intention}

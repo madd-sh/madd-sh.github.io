@@ -1,5 +1,5 @@
 {
-  "$schema": "https://madd.sh/schemas/draft/0.2.0/contract.schema.json",
+  "$schema": "https://madd.sh/schemas/0.2.0/contract.schema.json",
   "meta": {
     "format_version": "0.2.0",
     "name": "Synthetic documentation example",

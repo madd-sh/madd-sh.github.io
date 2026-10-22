@@ -4,7 +4,7 @@ linkTitle: "For agents"
 description: "Stable URLs, Markdown, JSON examples and versioned schemas. The same authored pages serve people and automated readers."
 weight: 6
 eyebrow: "INTENT / CONTRACT / EVIDENCE"
-status: "Method · 0.1.3 released / 0.2.0-rc.1 published under next"
+status: "Method · CLI 0.2.0 / contract format 0.2.0 stable"
 ---
 
 ## Start from the index
@@ -17,7 +17,7 @@ Each page offers a Markdown link and a source reference. Hugo renders both human
 
 ## Respect version and status
 
-The stable installer is 0.1.3. The **0.2.0-rc.1** candidate is published under npm's `next` tag and includes the `madd-method` skills for Claude Code and Codex. Draft schema paths may change before stable release; released schema paths are preserved. Never infer delivery from an editable task status.
+The stable installer is **0.2.0** and includes the `madd-method` skills for Claude Code and Codex. Agent adapters retain their legacy contract; the versioned 0.2.0 contract is opt-in through `init --contract-only`. Published schema paths are preserved, and the RC's draft identity remains accepted. Never infer delivery from an editable task status.
 
 ## Treat content as data
 

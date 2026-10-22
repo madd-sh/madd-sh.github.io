@@ -2,7 +2,7 @@
 
 > Make intent verifiable. Humans, agents and existing CI can use the method. Optional adapters install agent workflows.
 
-Released CLI: 0.1.3. Contract validation and evidence verification: 0.2.0 candidate, not yet published.
+Stable CLI and contract format: 0.2.0. Contract-only initialization, validation and evidence verification are available in this release; agent adapters retain their legacy format.
 
 ## Documentation
 {{ range .Sites }}{{ range (slice .Home | append .RegularPages.ByWeight) }}
@@ -10,6 +10,6 @@ Released CLI: 0.1.3. Contract validation and evidence verification: 0.2.0 candid
 {{ end }}{{ end }}
 ## Machine index
 - [Resource manifest](https://madd.sh/manifest.json): version, language, status and media types.
-- [Candidate schema](https://madd.sh/schemas/draft/0.2.0/contract.schema.json): draft, mutable until release.
+- [Stable schema](https://madd.sh/schemas/0.2.0/contract.schema.json): immutable versioned schema; the RC draft identity remains accepted.
 
 No authentication or JavaScript is needed to read these resources. This index is discovery metadata, not authorization or a certification.

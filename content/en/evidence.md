@@ -4,7 +4,7 @@ linkTitle: "Evidence"
 description: "A status is a claim. Evidence must identify the revision, scope, checks and independent authority behind it."
 weight: 5
 eyebrow: "INTENT / CONTRACT / EVIDENCE"
-status: "Method · 0.1.3 released / 0.2.0 candidate"
+status: "Method · CLI 0.2.0 / contract format 0.2.0 stable"
 ---
 
 ## What belongs in a delivery record
@@ -18,13 +18,13 @@ status: "Method · 0.1.3 released / 0.2.0 candidate"
 
 ## The candidate verification gate
 
-The 0.2.0 CLI candidate verifies Ed25519-signed CI and review receipts against an explicitly trusted policy outside the candidate tree. It requires separate identities and keys, refuses review by a declared author, and requires a clean tracked revision. A contract cannot nominate its own trust authority.
+CLI 0.2.0 verifies Ed25519-signed CI and review receipts against an explicitly trusted policy outside the candidate tree. It requires separate identities and keys, refuses review by a declared author, and requires a clean tracked revision. A contract cannot nominate its own trust authority.
 
 The protected pipeline and maintainers are responsible for the policy, authors, signing-key custody and truthful execution/review records. Cryptographic verification proves that trusted keys signed the claims; it cannot prove that a reviewer was diligent or that an incomplete test suite found every bug. Missing authority setup fails closed.
 
 ## What this relaunch can demonstrate
 
-The relaunch exercises contract validation, negative security cases, site builds and browser checks. Candidate results are recorded in the source repository with exact commands and limitations. The RC is published under npm's `next` tag; these local results still do not constitute authenticated production delivery evidence.
+The relaunch exercises contract validation, negative security cases, site builds and browser checks. Candidate results are recorded in the source repository with exact commands and limitations. The stable release is published under npm's `latest` tag; these local results do not constitute authenticated production delivery evidence.
 
 ## No invented benchmarks
 

@@ -4,7 +4,7 @@ linkTitle: "Method"
 description: "Turn an intention into a reviewable change and record the result. Keep the loop short enough to use every day."
 weight: 1
 eyebrow: "INTENT / CONTRACT / EVIDENCE"
-status: "Method · 0.1.3 released / 0.2.0 candidate"
+status: "Method · CLI 0.2.0 / contract format 0.2.0 stable"
 aliases: ["/manifesto.html"]
 ---
 

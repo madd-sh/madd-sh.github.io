@@ -4,7 +4,7 @@ linkTitle: "Skills"
 description: "Un skill rassemble un savoir utile et sa vérification. Ajoutez-le pour un besoin réel, sans multiplier les couches d’instructions."
 weight: 7
 eyebrow: "INTENTION / CONTRAT / PREUVES"
-status: "Méthode · 0.1.3 publiée / 0.2.0 candidate"
+status: "Méthode · CLI 0.2.0 / format de contrat 0.2.0 stable"
 ---
 
 ## Combler un manque précis {#gap}
