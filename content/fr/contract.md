@@ -4,14 +4,14 @@ linkTitle: "Contrat"
 description: "Des fragments JSON, des exigences stables et un registre unique de contrôles. Distinguer validité, raccordement aux tests et preuves de livraison."
 weight: 2
 eyebrow: "INTENTION / CONTRAT / PREUVES"
-status: "Méthode · 0.1.3 publiée / 0.2.0-rc.1 publiée sous next"
+status: "Méthode · CLI 0.2.0 / format de contrat 0.2.0 stable"
 ---
 
 ## Deux versions, une compatibilité explicite
 
-La CLI publiée **0.1.3** installe le contrat historique et des adaptateurs agents optionnels. Son schéma permissif ne certifie ni complétude ni livraison. Le **format candidat 0.2.0-rc.1** est optionnel et ne réécrit pas les anciens contrats.
+La **CLI 0.2.0** fournit le **format de contrat 0.2.0 stable** via `init --contract-only`. Les adaptateurs agents optionnels gardent le contrat historique et son schéma permissif, qui ne certifie ni complétude ni livraison. Aucun contrat existant n’est migré silencieusement. L’identité du schéma RC reste acceptée ; le schéma stable possède une adresse versionnée immuable.
 
-[Schéma historique](/schemas/legacy-0.1.3/contract.schema.json) · [Schéma candidat](/schemas/draft/0.2.0/contract.schema.json) · [Exemple synthétique](/examples/contract-0.2.0.json)
+[Schéma historique](/schemas/legacy-0.1.3/contract.schema.json) · [Schéma stable](/schemas/0.2.0/contract.schema.json) · [Exemple synthétique](/examples/contract-0.2.0.json)
 
 ## Quatre fichiers pour commencer
 
@@ -35,18 +35,18 @@ Les décisions techniques, les opérations, les fractions d’audit et la rétro
 
 Écrire `done`, `passing` ou `verified` ne crée jamais une preuve. Un contrôle obligatoire ignoré, échoué, absent ou périmé ne peut valider une livraison.
 
-## Essayer la candidate
+## Commencer par un contrat
 
-Ces commandes utilisent la **candidate 0.2.0-rc.1** publiée sous le tag npm `next` :
+Ces commandes figent la CLI stable **0.2.0** :
 
 ```sh
 mkdir -p /tmp/my-madd-change
-npx --yes @madd-sh/madd@next init --contract-only /tmp/my-madd-change
-npx --yes @madd-sh/madd@next validate /tmp/my-madd-change --json
+npx --yes @madd-sh/madd@0.2.0 init --contract-only /tmp/my-madd-change
+npx --yes @madd-sh/madd@0.2.0 validate /tmp/my-madd-change --json
 ```
 
 Remplacez l’exigence, la tâche et le contrôle initiaux. Un contrôle planifié reste volontairement sans implémentation. Positionnez `binding` à `bound` et `ref` sur un fichier relatif existant ; `--require-bound` impose ce raccordement. Déclarez une fraction avant d’utiliser `--fraction FRAC-001`.
 
 ## Des entrées contrôlées
 
-Le validateur charge uniquement le schéma fourni avec la CLI. Il refuse les doublons, versions inconnues, références cassées, cycles, sorties du répertoire, liens symboliques internes et entrées trop volumineuses. Il ne télécharge pas de schéma et n’exécute pas de commande contenue dans la spécification. [Lire le format et la politique de preuves](https://github.com/madd-sh/madd/blob/feat/madd-relaunch-contracts/docs/contracts.md).
+Le validateur charge uniquement le schéma fourni avec la CLI. Il refuse les doublons, versions inconnues, références cassées, cycles, sorties du répertoire, liens symboliques internes et entrées trop volumineuses. Il ne télécharge pas de schéma et n’exécute pas de commande contenue dans la spécification. [Lire le format et la politique de preuves](https://github.com/madd-sh/madd/blob/v0.2.0/docs/contracts.md).

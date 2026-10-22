@@ -14,10 +14,17 @@
     "sha256": "847a0f66ac07da74ade2e1ff52adb13b560a7f97c0e5b1b9c5ef88adbf66b152"
   },
   {
+    "url": "https://madd.sh/schemas/0.2.0/contract.schema.json",
+    "mediaType": "application/schema+json",
+    "version": "0.2.0",
+    "status": "released",
+    "sha256": "ee90961e7333b0055f44c6a62d3b5f52170af5b58282eb2aa82ee340cf401a55"
+  },
+  {
     "url": "https://madd.sh/examples/contract-0.2.0.json",
     "mediaType": "application/json",
     "version": "0.2.0",
-    "status": "candidate",
-    "sha256": "2bb8764ca82206ba027d6dcfba61cf6edd4f9f6e98a47b887b42b95896449d5b"
+    "status": "released",
+    "sha256": "68fd03339f4774f98c9eb67f498be40cb57aeef41db8482669e44aea509e39ca"
   }
 ]

@@ -4,7 +4,7 @@ linkTitle: "Exercice"
 description: "Un exercice pour un développeur, un relecteur et la CI. Un exemple synthétique, pas une mesure de productivité."
 weight: 3
 eyebrow: "INTENTION / CONTRAT / PREUVES"
-status: "Méthode · 0.1.3 publiée / 0.2.0 candidate"
+status: "Méthode · CLI 0.2.0 / format de contrat 0.2.0 stable"
 ---
 
 ## L’intention

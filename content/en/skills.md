@@ -4,7 +4,7 @@ linkTitle: "Skills"
 description: "A skill packages useful working knowledge. Add one when it improves a real task; avoid another instruction layer for its own sake."
 weight: 7
 eyebrow: "INTENT / CONTRACT / EVIDENCE"
-status: "Method · 0.1.3 released / 0.2.0 candidate"
+status: "Method · CLI 0.2.0 / contract format 0.2.0 stable"
 ---
 
 ## Close a specific knowledge gap {#gap}

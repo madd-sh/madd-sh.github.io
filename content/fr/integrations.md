@@ -4,7 +4,7 @@ linkTitle: "Intégrations"
 description: "MADD peut commencer avec des humains et la CI existante. Les intégrations agents sont des adaptateurs optionnels autour des mêmes responsabilités."
 weight: 4
 eyebrow: "INTENTION / CONTRAT / PREUVES"
-status: "Méthode · 0.1.3 publiée / 0.2.0 candidate"
+status: "Méthode · CLI 0.2.0 / format de contrat 0.2.0 stable"
 ---
 
 ## Développeur + relecteur + CI
@@ -13,17 +13,17 @@ Conservez les spécifications près du code. Utilisez branches, pull requests et
 
 ## Des adaptateurs agents optionnels
 
-L’installeur publié 0.1.3 comprend des adaptateurs Claude Code, Codex, Mistral Vibe, OpenCode et Docker cagent. Ils installent instructions, skills, hooks et contrat historique. Examinez les changements avant installation dans un projet ayant ses propres règles.
+L’installeur stable 0.2.0 comprend des adaptateurs Claude Code, Codex, Mistral Vibe, OpenCode et Docker cagent. Ils installent instructions, skills, hooks et contrat historique. Examinez les changements avant installation dans un projet ayant ses propres règles.
 
 ```sh
-npx @madd-sh/madd@0.1.3 init --dry-run
+npx @madd-sh/madd@0.2.0 init --dry-run
 ```
 
-Leur installation et leurs contrats historiques disposent de tests de régression dans la CLI candidate. Cela ne prouve pas que tous les clients tiers se comportent de façon identique. Leur prise en charge dépend de l’adaptateur et de la version du client.
+Leur installation et leurs contrats historiques disposent de tests de régression dans la CLI 0.2.0. Cela ne prouve pas que tous les clients tiers se comportent de façon identique. Leur prise en charge dépend de l’adaptateur et de la version du client.
 
 ## Adopter le nouveau contrat explicitement
 
-La candidate 0.2.0 propose `init --contract-only`. Elle crée les spécifications sans hook ni instruction agent. Les installations existantes gardent leur représentation historique jusqu’à une migration revue. Le mode contrat seul refuse d’écraser un répertoire `.madd` existant.
+La CLI 0.2.0 propose `init --contract-only`. Elle crée les spécifications sans hook ni instruction agent. Les installations existantes gardent leur représentation historique jusqu’à une migration revue. Le mode contrat seul refuse d’écraser un répertoire `.madd` existant.
 
 ## La CI reste responsable de l’exécution
 

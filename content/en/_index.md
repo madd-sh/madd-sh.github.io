@@ -4,7 +4,7 @@ linkTitle: "Start"
 description: "A clear contract. A small change. Evidence you can inspect. MADD helps humans and agents agree on what should happen, then check what actually shipped."
 weight: 0
 eyebrow: "INTENT / CONTRACT / EVIDENCE"
-status: "Method · 0.1.3 released / 0.2.0-rc.1 published under next"
+status: "Method · CLI 0.2.0 / contract format 0.2.0 stable"
 ---
 
 ## A change with a receipt
@@ -38,13 +38,13 @@ A fraction is a small delivery scope with named requirements and checks. A green
 
 ## Start with what is available {#quickstart}
 
-The published **0.1.3** CLI installs optional agent workflows. Its `doctor` command checks installation health.
+The stable **0.2.0** CLI installs optional agent workflows. Its `doctor` command checks installation health.
 
 ```sh
-npx @madd-sh/madd@0.1.3 init
+npx @madd-sh/madd@0.2.0 init
 ```
 
-The **0.2.0-rc.1 candidate** adds contract-only initialization, structural validation and evidence verification. Try it from npm with `npx @madd-sh/madd@next`. [Read the candidate workflow](contract.html#try-the-candidate).
+**CLI 0.2.0** also provides contract-only initialization, structural validation and evidence verification. Use `npx @madd-sh/madd@0.2.0` to pin this release. [Start with a contract](contract.html#start-with-a-contract).
 
 ## Keep your tools {#domains}
 

@@ -31,6 +31,7 @@ const staticAllowlist = [
   'CNAME', 'robots.txt', 'favicon.svg', 'css/style.css',
   'js/i18n.js', 'js/main.js', 'contract.schema.json',
   'schemas/legacy-0.1.3/contract.schema.json', 'schemas/draft/0.2.0/contract.schema.json',
+  'schemas/0.2.0/contract.schema.json',
   'examples/contract-0.2.0.json', 'vocab/index.html', 'vocab/madd.jsonld', 'images/og-default-v3.png',
 ];
 
@@ -73,10 +74,10 @@ async function resources() {
   assert.deepEqual((await fileList('static')).sort(), staticAllowlist.sort(), 'Review every public static input explicitly');
   assert.equal(await (await get(`${origin}/CNAME`)).text(), 'madd.sh\n');
   const manifest = await (await get(`${origin}/manifest.json`)).json();
-  assert.equal(manifest.release, '0.1.3');
-  assert.equal(manifest.candidate, '0.2.0');
-  assert.equal(manifest.resources.length, 35);
-  assert.equal(new Set(manifest.resources.map(resource => resource.url)).size, 35);
+  assert.equal(manifest.release, '0.2.0');
+  assert.equal(manifest.candidate, '');
+  assert.equal(manifest.resources.length, 36);
+  assert.equal(new Set(manifest.resources.map(resource => resource.url)).size, 36);
   assert.deepEqual(await (await get(`${origin}/fr/manifest.json`)).json(), manifest);
   for (const resource of manifest.resources) {
     assert.equal(new URL(resource.url).origin, 'https://madd.sh');
@@ -87,7 +88,10 @@ async function resources() {
       assert.deepEqual(resource, sourceResources.find(item => item.url === resource.url));
     }
   }
-  const schema = await (await get(`${origin}/schemas/draft/0.2.0/contract.schema.json`)).json();
+  const schema = await (await get(`${origin}/schemas/0.2.0/contract.schema.json`)).json();
+  assert.equal(schema.$id, 'https://madd.sh/schemas/0.2.0/contract.schema.json');
+  const rc = await (await get(`${origin}/schemas/draft/0.2.0/contract.schema.json`)).json();
+  assert.equal(rc.$id, 'https://madd.sh/schemas/draft/0.2.0/contract.schema.json');
   const vocabulary = await (await get(`${origin}/vocab/madd.jsonld`)).json();
   assert.equal(vocabulary['@type'], 'schema:DefinedTermSet');
   assert.equal(vocabulary.hasDefinedTerm.length, 8);
@@ -99,10 +103,10 @@ async function resources() {
   assert.deepEqual(await (await get(`${origin}/contract.schema.json`)).json(), await (await get(`${origin}/schemas/legacy-0.1.3/contract.schema.json`)).json());
   const llms = await (await get(`${origin}/llms.txt`)).text();
   for (const resource of manifest.resources.filter(item => item.mediaType === 'text/markdown')) assert(llms.includes(resource.url));
-  assert.match(llms, /0\.2\.0 candidate, not yet published/);
+  assert.match(llms, /Stable CLI and contract format: 0\.2\.0/);
   const outputs = await fileList('public');
   assert(!outputs.some(path => path.startsWith('.madd/') || path.startsWith('docs/') || path.includes('node_modules')), 'Private working material must not enter the build');
-  console.log('PASS: HTTP resources, explicit static allowlist, manifest, hashes, candidate schema/example, preserved legacy schema');
+  console.log('PASS: HTTP resources, explicit static allowlist, manifest, hashes, stable schema/example, preserved legacy and RC schemas');
   return manifest.resources.filter(item => item.mediaType === 'text/html');
 }
 

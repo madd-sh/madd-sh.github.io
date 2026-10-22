@@ -2,9 +2,9 @@
 
 The EN/FR Hugo source for [madd.sh](https://madd.sh). One authored Markdown page
 produces HTML and Markdown; generated indexes expose the public resources.
-The stable CLI is **0.1.3**. Contract validation and evidence verification are
-available in **0.2.0-rc.1** under npm's `next` tag. This site is deployed from
-`main`; the RC is explicitly not a stable release.
+The stable CLI and contract format are **0.2.0**. Pin the CLI with
+`npx --yes @madd-sh/madd@0.2.0`; optional agent adapters retain their legacy
+contract. This site is deployed from `main` after npm publication succeeds.
 
 ## Local checks
 
@@ -49,8 +49,9 @@ recursive import from working contracts, other repositories or CI transcripts.
 The pilot `.madd/contract.d/` stays outside Hugo's published inputs.
 
 Preserve `static/contract.schema.json` and `schemas/legacy-0.1.3/` for legacy
-readers. Candidate schemas live under `schemas/draft/0.2.0/`; update the matching
-resource digest whenever their bytes change. The synthetic example deliberately
+readers. Preserve the RC schema under `schemas/draft/0.2.0/` as well. The stable
+schema at `schemas/0.2.0/` is immutable and matches the CLI's bundled schema;
+resource hashes identify the published bytes. The synthetic example deliberately
 contains a planned, unexecuted check. A status never substitutes for evidence.
 
 ## Review, publish and rollback
@@ -62,9 +63,9 @@ browser checks before uploading the deployment artifact. Hugo and Node versions,
 development dependencies and all Action commit IDs are pinned.
 
 Before a stable release, obtain an independent diff review, a successful remote
-CI run and a recorded manual screen-reader/touch review. The RC is available
-with `npx --yes @madd-sh/madd@next`; its source and provenance are linked from
-the CLI release workflow. Keep RC/stable wording accurate.
+CI run and a recorded manual screen-reader/touch review. The stable CLI is
+available with `npx --yes @madd-sh/madd@0.2.0`; its source and provenance are
+linked from the CLI release workflow. Keep RC/stable wording accurate.
 
 Retain the previous successful Pages commit/artifact. If navigation or public
 resources regress, revert the relaunch commit through review and deploy the

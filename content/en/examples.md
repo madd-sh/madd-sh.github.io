@@ -4,7 +4,7 @@ linkTitle: "Walkthrough"
 description: "A worked exercise for a developer, a reviewer and CI. This is a synthetic example, not a productivity benchmark."
 weight: 3
 eyebrow: "INTENT / CONTRACT / EVIDENCE"
-status: "Method · 0.1.3 released / 0.2.0 candidate"
+status: "Method · CLI 0.2.0 / contract format 0.2.0 stable"
 ---
 
 ## The intention
